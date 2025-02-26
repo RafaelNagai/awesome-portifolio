@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "./size.scss";
+
+@mixin responsive-property($property, $mobile, $desktop) {
+  & {
+    #{$property}: $mobile;
+  }
+  @media (min-width: map.get($base-size, mobile)) {
+    #{$property}: $desktop;
+  }
+  @media (min-width: map.get($base-size, desktop)) {
+    #{$property}: $desktop;
+  }
+}
+
+@mixin responsive($size) {
+  @media (min-width: map.get($screen-size, $size)) {
+    @content;
+  }
+}

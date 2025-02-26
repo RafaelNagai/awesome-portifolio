@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "sass": "npx sass --watch src/features/:src/css",
+    "sass": "npx sass --watch src/:css/",
     "dev": "vite"
   },
   "dependencies": {

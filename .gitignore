@@ -26,3 +26,7 @@ dist-ssr
 *.sln
 *.sw?
 *-lock.json
+
+# I dont need .css because I use sass
+*.css
+*.css.map

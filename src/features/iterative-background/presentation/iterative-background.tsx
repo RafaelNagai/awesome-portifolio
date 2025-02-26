@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "../../../css/iterative-background/presentation/sass/iterative-background.css";
+import "/css/features/iterative-background/presentation/sass/iterative-background.css";
 
 type IterativeBackgroundProps = {
   src: string;
@@ -15,6 +15,7 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
   children,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const secondRef = useRef<HTMLDivElement>(null);
   const [position1, setPosition1] = useState({ top: "0px", left: "0px" });
   const [position2, setPosition2] = useState({ top: "0px", left: "0px" });
   const [position3, setPosition3] = useState({ top: "0px", left: "0px" });
@@ -71,16 +72,25 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
   const onMoveMouse = (event: React.MouseEvent) => {
     const size = ref.current?.offsetWidth || 0;
 
-    const otherPosition = (factor: number) => {
+    // event.clientY > ref.current?.style.display = "none"
+
+    // event;
+    // if (event.clientY > 200 && ref.current) {
+    //   ref.current.style.display = "none";
+    // }
+
+    console.log(event.clientX + " / " + (event.clientX - size / 2));
+
+    const otherPosition = () => {
       return {
-        top: `${event.clientY - size / (2 + factor / sets.length)}px`,
-        left: `${event.clientX - size / (2 + factor / sets.length)}px`,
+        top: `${event.clientY - size / 2}px`,
+        left: `${event.clientX - size / 2}px`,
       };
     };
 
     sets.forEach((item, index) => {
       setTimeout(() => {
-        item(otherPosition(index));
+        item(otherPosition());
       }, delay * index);
     });
   };
@@ -102,17 +112,18 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
       onMouseMove={onMoveMouse}
       style={backgroundUrl}
     >
-      {positions.map((item, index) => (
-        <div
-          ref={index === 0 ? ref : null}
-          className="iterative-mouse"
-          style={{
-            ...item,
-            ...backgroundUrl,
-            ...size(defaultCicleSize * (1 - index / positions.length)),
-          }}
-        />
-      ))}
+      <div ref={ref}>
+        {positions.map((item, index) => (
+          <div
+            className="iterative-mouse"
+            style={{
+              ...item,
+              ...backgroundUrl,
+              ...size(defaultCicleSize * (1 - index / positions.length)),
+            }}
+          />
+        ))}
+      </div>
       {children}
     </div>
   );

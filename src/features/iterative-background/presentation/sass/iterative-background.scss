@@ -1,12 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  overflow-x: hidden;
-}
-
 .iterative-background {
   width: 100%;
   height: 100vh;
@@ -17,6 +8,8 @@ body {
   align-items: center;
   justify-content: center;
   user-select: none;
+  background-color: black;
+  cursor: none;
 
   &::before {
     content: "";
