@@ -5,6 +5,11 @@ import { IterativeBackground } from "./features/iterative-background/presentatio
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <IterativeBackground />
+    <IterativeBackground
+      sizeCircle={25}
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Concord_Pacific_Master_Plan_Area.jpg/1200px-Concord_Pacific_Master_Plan_Area.jpg"
+    >
+      <IntroductionPage />
+    </IterativeBackground>
   </StrictMode>
 );
