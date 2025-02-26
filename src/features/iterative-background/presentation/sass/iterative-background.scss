@@ -24,12 +24,26 @@
   }
 }
 
+$size-circle: 25rem;
+
 .iterative-mouse {
-  position: absolute;
-  border-radius: 90%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  cursor: none;
+  width: $size-circle;
+  height: $size-circle;
+
+  &__circle {
+    position: absolute;
+    border-radius: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    cursor: none;
+  }
+
+  @for $i from 1 through 15 {
+    &__circle--#{$i} {
+      width: calc($size-circle * (1 - $i / 15));
+      height: calc($size-circle * (1 - $i / 15));
+    }
+  }
 }

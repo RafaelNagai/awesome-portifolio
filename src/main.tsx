@@ -7,7 +7,7 @@ import "/css/main.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <IterativeBackground sizeCircle={25} src={icon}>
+    <IterativeBackground src={icon}>
       <IntroductionPage />
     </IterativeBackground>
     <div className="test"></div>

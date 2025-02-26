@@ -3,19 +3,16 @@ import "/css/features/iterative-background/presentation/sass/iterative-backgroun
 
 type IterativeBackgroundProps = {
   src: string;
-  sizeCircle: number;
   delay?: number;
   children: React.ReactNode;
 };
 
 export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
   src,
-  sizeCircle,
   delay = 10,
   children,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const secondRef = useRef<HTMLDivElement>(null);
   const [position1, setPosition1] = useState({ top: "0px", left: "0px" });
   const [position2, setPosition2] = useState({ top: "0px", left: "0px" });
   const [position3, setPosition3] = useState({ top: "0px", left: "0px" });
@@ -31,7 +28,6 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
   const [position13, setPosition13] = useState({ top: "0px", left: "0px" });
   const [position14, setPosition14] = useState({ top: "0px", left: "0px" });
   const [position15, setPosition15] = useState({ top: "0px", left: "0px" });
-  const defaultCicleSize = sizeCircle;
 
   const positions = [
     position1,
@@ -70,7 +66,7 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
   ];
 
   const onMoveMouse = (event: React.MouseEvent) => {
-    const size = ref.current?.offsetWidth || 0;
+    const size = ref.current?.offsetHeight || 0;
 
     // event.clientY > ref.current?.style.display = "none"
 
@@ -78,8 +74,6 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
     // if (event.clientY > 200 && ref.current) {
     //   ref.current.style.display = "none";
     // }
-
-    console.log(event.clientX + " / " + (event.clientX - size / 2));
 
     const otherPosition = () => {
       return {
@@ -99,27 +93,20 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
     backgroundImage: `url(${src})`,
   };
 
-  const size = (value: number) => {
-    return {
-      height: `${value}rem`,
-      width: `${value}rem`,
-    };
-  };
-
   return (
     <div
       className="iterative-background"
       onMouseMove={onMoveMouse}
       style={backgroundUrl}
     >
-      <div ref={ref}>
-        {positions.map((item, index) => (
+      <div className="iterative-mouse" ref={ref}>
+        {positions.map((position, index) => (
           <div
-            className="iterative-mouse"
+            className={`iterative-mouse__circle iterative-mouse__circle--${index}`}
             style={{
-              ...item,
+              ...position,
               ...backgroundUrl,
-              ...size(defaultCicleSize * (1 - index / positions.length)),
+              // ...size(defaultCicleSize * (1 - index / positions.length)),
             }}
           />
         ))}
