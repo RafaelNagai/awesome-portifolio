@@ -1,5 +1,5 @@
 import React from "react";
-import "./sass/introduction.scss";
+import "./introduction-page.scss";
 import { IterativeBackground } from "../../iterative-background/presentation/iterative-background";
 import icon from "../../../assets/rafael-background.png";
 

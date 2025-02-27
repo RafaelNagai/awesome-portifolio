@@ -1,0 +1,9 @@
+.experience {
+  display: grid;
+  justify-content: center;
+  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 50px 1fr;
+
+  &__item:nth-of-type(even) {
+    margin-top: 100px;
+  }
+}

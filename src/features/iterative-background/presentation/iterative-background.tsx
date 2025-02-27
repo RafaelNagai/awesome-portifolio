@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import "./sass/iterative-background.scss";
+import React, { useEffect } from "react";
+import "./iterative-background.scss";
 
 type IterativeBackgroundProps = {
   src: string;

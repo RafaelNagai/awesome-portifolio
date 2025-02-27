@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../../core/sass/color.scss" as *;
+
 .introduction {
   display: flex;
   height: 100%;
@@ -13,10 +16,12 @@
   }
 
   &__title {
-    font-size: 3rem;
+    font-size: 4rem;
+    color: map.get($colors, primary, main);
   }
 
   &__summary {
     font-size: 1rem;
+    color: white;
   }
 }

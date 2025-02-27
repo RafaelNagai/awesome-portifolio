@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "../../../../core/sass/color.scss" as *;
+
+.job-card {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+
+  &__skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__skill {
+    border-radius: 1rem;
+    padding: 0.5rem 2rem;
+    background-color: map.get($colors, primary, main);
+    outline: 2px solid map.get($colors, primary, main);
+    outline-offset: 2px;
+  }
+}
