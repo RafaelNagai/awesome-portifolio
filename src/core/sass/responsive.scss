@@ -1,15 +1,31 @@
 @use "sass:map";
-@use "./size.scss";
+@use "./size.scss" as *;
 
-@mixin responsive-property($property, $mobile, $desktop) {
+@mixin responsive-property(
+  $property,
+  $xsValue,
+  $smValue,
+  $mdValue,
+  $lgValue,
+  $xlValue
+) {
   & {
-    #{$property}: $mobile;
+    #{$property}: $xsValue;
   }
-  @media (min-width: map.get($base-size, mobile)) {
-    #{$property}: $desktop;
+  @include responsive(xs) {
+    #{$property}: $xsValue;
   }
-  @media (min-width: map.get($base-size, desktop)) {
-    #{$property}: $desktop;
+  @include responsive(sm) {
+    #{$property}: $smValue;
+  }
+  @include responsive(md) {
+    #{$property}: $mdValue;
+  }
+  @include responsive(lg) {
+    #{$property}: $lgValue;
+  }
+  @include responsive(xl) {
+    #{$property}: $xlValue;
   }
 }
 

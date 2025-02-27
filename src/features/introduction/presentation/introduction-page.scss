@@ -1,18 +1,27 @@
 @use "sass:map";
 @use "../../../core/sass/color.scss" as *;
+@use "../../../core/sass/responsive.scss" as *;
 
 .introduction {
   display: flex;
   height: 100%;
-  width: 50%;
   z-index: 10;
   justify-content: start;
-  align-items: center;
-  padding-left: 5rem;
+  align-items: end;
+  @include responsive-property(width, 100%, 50%, 50%, 50%, 50%);
+  @include responsive-property(
+    padding,
+    0 0 1rem 1rem,
+    0 0 1rem 10%,
+    0 0 1rem 10%,
+    0 0 1rem 10%,
+    0 0 1rem 10%
+  );
 
   &__content {
     display: block;
     flex: 1;
+    margin-top: 50px;
   }
 
   &__title {
