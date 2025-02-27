@@ -4,7 +4,7 @@ import "./job-item.scss";
 type Props = {
   className?: string;
 };
-export const JobItem: React.FC<Props> = ({ className }) => {
+export const JobItem: React.FC<Props> = ({ className = "" }) => {
   return (
     <div className={`job-card ${className}`}>
       <h2>JOB TITLE</h2>

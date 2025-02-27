@@ -1,9 +1,16 @@
 .experience {
   display: grid;
   justify-content: center;
-  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 50px 1fr;
+  grid-template: auto / 1fr auto 1fr;
 
-  &__item:nth-of-type(even) {
-    margin-top: 100px;
+  &__item:nth-of-type(3n + 4),
+  &__item:first-of-type {
+    justify-self: end;
+    text-align: end;
+    margin-top: 50px;
+  }
+
+  &__item:nth-of-type(3n) {
+    margin-top: 150px;
   }
 }
