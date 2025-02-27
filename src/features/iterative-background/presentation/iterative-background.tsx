@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import "/css/features/iterative-background/presentation/sass/iterative-background.css";
+import React, { useEffect, useRef } from "react";
+import "./sass/iterative-background.scss";
 
 type IterativeBackgroundProps = {
   src: string;
@@ -12,104 +12,102 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
   delay = 10,
   children,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [position1, setPosition1] = useState({ top: "0px", left: "0px" });
-  const [position2, setPosition2] = useState({ top: "0px", left: "0px" });
-  const [position3, setPosition3] = useState({ top: "0px", left: "0px" });
-  const [position4, setPosition4] = useState({ top: "0px", left: "0px" });
-  const [position5, setPosition5] = useState({ top: "0px", left: "0px" });
-  const [position6, setPosition6] = useState({ top: "0px", left: "0px" });
-  const [position7, setPosition7] = useState({ top: "0px", left: "0px" });
-  const [position8, setPosition8] = useState({ top: "0px", left: "0px" });
-  const [position9, setPosition9] = useState({ top: "0px", left: "0px" });
-  const [position10, setPosition10] = useState({ top: "0px", left: "0px" });
-  const [position11, setPosition11] = useState({ top: "0px", left: "0px" });
-  const [position12, setPosition12] = useState({ top: "0px", left: "0px" });
-  const [position13, setPosition13] = useState({ top: "0px", left: "0px" });
-  const [position14, setPosition14] = useState({ top: "0px", left: "0px" });
-  const [position15, setPosition15] = useState({ top: "0px", left: "0px" });
+  const setCircleVisible = (show: boolean) => {
+    const circles = document.querySelectorAll<HTMLDivElement>(
+      ".iterative-mouse__circle"
+    );
+    const container = document.querySelector<HTMLDivElement>(
+      ".iterative-background"
+    );
+    if (container && circles) {
+      if (show) {
+        container.style.cursor = "none";
+        circles.forEach((circle) => {
+          circle.classList.remove("iterative-mouse--hide");
+        });
+      } else {
+        container.style.cursor = "auto";
+        circles.forEach((circle) => {
+          circle.classList.add("iterative-mouse--hide");
+        });
+      }
+    }
+  };
 
-  const positions = [
-    position1,
-    position2,
-    position3,
-    position4,
-    position5,
-    position6,
-    position7,
-    position8,
-    position9,
-    position10,
-    position11,
-    position12,
-    position13,
-    position14,
-    position15,
-  ];
-
-  const sets = [
-    setPosition1,
-    setPosition2,
-    setPosition3,
-    setPosition4,
-    setPosition5,
-    setPosition6,
-    setPosition7,
-    setPosition8,
-    setPosition9,
-    setPosition10,
-    setPosition11,
-    setPosition12,
-    setPosition13,
-    setPosition14,
-    setPosition15,
-  ];
-
-  const onMoveMouse = (event: React.MouseEvent) => {
-    const size = ref.current?.offsetHeight || 0;
-
-    // event.clientY > ref.current?.style.display = "none"
-
-    // event;
-    // if (event.clientY > 200 && ref.current) {
-    //   ref.current.style.display = "none";
-    // }
-
-    const otherPosition = () => {
-      return {
-        top: `${event.clientY - size / 2}px`,
-        left: `${event.clientX - size / 2}px`,
-      };
+  useEffect(() => {
+    const container = document.querySelector<HTMLDivElement>(
+      ".iterative-background"
+    );
+    const circles = document.querySelectorAll<HTMLDivElement>(
+      ".iterative-mouse__circle"
+    );
+    const onOutOfContainer = (mousePosition: number) => {
+      if (container) {
+        if (mousePosition > container.getBoundingClientRect().height) {
+          setCircleVisible(false);
+        } else {
+          setCircleVisible(true);
+        }
+      }
+    };
+    const onMoveMouse = ({ pageX, pageY }: MouseEvent) => {
+      for (let i = 0; i < circles.length; i++) {
+        const size = circles[i].getBoundingClientRect().height;
+        if (i === 0) {
+          onOutOfContainer(pageY);
+        }
+        setTimeout(() => {
+          circles[i].style.top = `${pageY - size / 2}px`;
+          circles[i].style.left = `${pageX - size / 2}px`;
+        }, delay * i);
+      }
+    };
+    const onUpdateImagePosition = () => {
+      circles.forEach((circle: HTMLDivElement) => {
+        circle.style.backgroundPositionY = `-${window.scrollY}px`;
+      });
+      //onOutOfContainer(circles[0].getBoundingClientRect().bottom);
     };
 
-    sets.forEach((item, index) => {
-      setTimeout(() => {
-        item(otherPosition());
-      }, delay * index);
-    });
-  };
+    document.addEventListener("mousemove", onMoveMouse);
+    document.addEventListener("scroll", onUpdateImagePosition);
+    return () => {
+      document.removeEventListener("mousemove", onMoveMouse);
+      document.removeEventListener("scroll", onUpdateImagePosition);
+    };
+  }, []);
 
   const backgroundUrl = {
     backgroundImage: `url(${src})`,
   };
 
+  const onMouseLeave = () => {
+    setCircleVisible(false);
+  };
+
+  const onMouseEnter = () => {
+    setCircleVisible(true);
+  };
+
   return (
     <div
       className="iterative-background"
-      onMouseMove={onMoveMouse}
       style={backgroundUrl}
+      onMouseLeave={onMouseLeave}
+      onMouseEnter={onMouseEnter}
     >
-      <div className="iterative-mouse" ref={ref}>
-        {positions.map((position, index) => (
-          <div
-            className={`iterative-mouse__circle iterative-mouse__circle--${index}`}
-            style={{
-              ...position,
-              ...backgroundUrl,
-              // ...size(defaultCicleSize * (1 - index / positions.length)),
-            }}
-          />
-        ))}
+      <div className="iterative-mouse">
+        {Array(15)
+          .fill(1)
+          .map((_, index) => (
+            <div
+              key={index}
+              className={`iterative-mouse__circle iterative-mouse__circle--${index}`}
+              style={{
+                ...backgroundUrl,
+              }}
+            />
+          ))}
       </div>
       {children}
     </div>

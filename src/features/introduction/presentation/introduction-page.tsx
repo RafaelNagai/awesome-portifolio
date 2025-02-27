@@ -1,5 +1,5 @@
 import React from "react";
-import "/css/features/introduction/presentation/sass/introduction.css";
+import "./sass/introduction.scss";
 
 export const IntroductionPage: React.FC = () => {
   return (
