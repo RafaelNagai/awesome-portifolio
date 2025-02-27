@@ -1,8 +1,11 @@
 .introduction {
   display: flex;
+  height: 100%;
+  width: 50%;
   z-index: 10;
-  gap: 5rem;
-  padding: 5rem;
+  justify-content: start;
+  align-items: center;
+  padding-left: 5rem;
 
   &__content {
     display: block;
@@ -15,14 +18,5 @@
 
   &__summary {
     font-size: 1rem;
-  }
-
-  &__image {
-    background-image: url("https://cdn2.psychologytoday.com/assets/styles/manual_crop_4_3_1200x900/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 200px;
   }
 }
