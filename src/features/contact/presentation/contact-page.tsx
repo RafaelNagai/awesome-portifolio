@@ -23,8 +23,10 @@ export const ContactPage: React.FC = () => {
         const paddingBottom = 16;
         const topPosition =
           window.scrollY + heightScreen - paddingBottom - heightButton;
-
-        buttonElement.style.top = `${topPosition - relativeTopPage}px`;
+        let topElement = topPosition - relativeTopPage;
+        if (topElement <= 0 && !_isExpanded) {
+          buttonElement.style.top = `${topElement}px`;
+        }
       }
     };
     document.addEventListener("scroll", onScrollHandler);
