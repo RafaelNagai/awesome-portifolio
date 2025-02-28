@@ -1,5 +1,29 @@
 {
   "introduction": {
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,sapiente fugit? Aspernatur laborum facere optio temporibus, quidemquasi laboriosam exercitationem, aut libero laudantium debitisdistinctio hic suscipit ipsum, labore molestias! Unde, accusantiumeaque, id non pariatur rerum, sed amet labore repellat cumque natusratione. Numquam amet fugiat modi. Atque praesentium repudiandaenulla ducimus autem alias debitis corporis optio laudantium amet."
+    "description": "I am a trusted mobile developer with 8+ years of experience in Flutter and cross-platform development. I started in IT support at WIT Solutions before transitioning to development, working with PhoneGap, JavaScript, and PHP. I contributed to a Xamarin startup and played a key role in Liberty Mutual’s Aliro project using C# MVC 5. In 2018, I specialized in Xamarin Forms, earning certifications and leading an ASP.NET migration. After studying English in Ireland (B2 PET Cambridge), I focused on Flutter, taking Tech Lead roles at Camino Education and ArcTouch, delivering high-quality Android and iOS applications."
+  },
+  "experience": {
+    "job": {
+      "title": "Job Experience",
+      "description": "I have 8+ years of experience in web and mobile development, specializing in Flutter. I’ve worked with ArcTouch, Camino Education, Yamaha Group, Safra Bank, and Liberty Mutual, using technologies like Kotlin, Swift, C#, and JavaScript.",
+      "skills": {
+        "flutter": "Flutter",
+        "android": "Android",
+        "ios": "iOS",
+        "csharp": "C#",
+        "react": "React",
+        "sass": "Sass",
+        "agile": "Agile",
+        "scrum": "Scrum",
+        "kanban": "Kanban"
+      }
+    },
+    "youtube": {
+      "title": "Youtube Channel",
+      "description": "I co-founded Pub Dev, a YouTube channel focused on Flutter development, where I create content to simplify complex topics. Teaching is something I enjoy, whether mentoring developers or creating tutorials, as it helps others grow while reinforcing my own knowledge.",
+      "skills": {
+        "pubdev": "Pub Dev"
+      }
+    }
   }
 }

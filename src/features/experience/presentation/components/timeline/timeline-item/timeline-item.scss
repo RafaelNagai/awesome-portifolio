@@ -1,6 +1,6 @@
 @use "sass:map";
-@use "../../../../../core/sass/color.scss" as *;
-@use "../../../../../core/sass/responsive.scss" as *;
+@use "../../../../../../core/sass/color.scss" as *;
+@use "../../../../../../core/sass/responsive.scss" as *;
 
 .job-card {
   display: flex;
