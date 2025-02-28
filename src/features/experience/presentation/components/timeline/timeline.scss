@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "../../../../../core/sass/color.scss" as *;
+@use "../../../../../core/sass/responsive.scss" as *;
 
 $timeline-color: map.get($colors, secondary, main);
 $circle-size: 30px;
@@ -27,6 +28,19 @@ $timeline-stroke: 10px;
   &__base {
     background-color: $timeline-color;
     width: $timeline-stroke;
+    position: absolute;
+    background-color: #3b6790;
+    width: 10px;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    @include responsive-property(left, 10%, 10%, 50%, 50%, 50%);
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   &__branch {
@@ -35,7 +49,14 @@ $timeline-stroke: 10px;
     width: 50px;
     height: $timeline-stroke;
     margin-top: 10px;
-    margin-right: calc($circle-size / 3);
+    @include responsive-property(
+      margin-right,
+      0,
+      0,
+      calc($circle-size / 3),
+      calc($circle-size / 3),
+      calc($circle-size / 3)
+    );
 
     &::before {
       @include timeline-circle($circle-size, $timeline-color, right);
@@ -48,19 +69,42 @@ $timeline-stroke: 10px;
 }
 
 .experience {
-  &__item:nth-of-type(3n + 4),
-  &__item:first-of-type {
+  &__item:nth-of-type(even) {
     &.timeline {
-      flex-direction: row-reverse;
+      @include responsive-property(
+        flex-direction,
+        row,
+        row,
+        row-reverse,
+        row-reverse,
+        row-reverse
+      );
+
+      &__content {
+        @include responsive-property(align-items, start, start, end, end, end);
+      }
     }
     & .timeline__branch {
       margin-right: 0;
-      margin-left: calc($circle-size / 3);
+      @include responsive-property(
+        margin-left,
+        0,
+        0,
+        calc($circle-size / 3),
+        calc($circle-size / 3),
+        calc($circle-size / 3)
+      );
       &::before {
-        @include timeline-circle($circle-size, $timeline-color, left);
+        @include timeline-circle($circle-size, $timeline-color, right);
+        @include responsive(md) {
+          @include timeline-circle($circle-size, $timeline-color, left);
+        }
       }
       &::after {
-        @include timeline-circle($small-circle-size, white, left);
+        @include timeline-circle($small-circle-size, white, right);
+        @include responsive(md) {
+          @include timeline-circle($small-circle-size, white, left);
+        }
       }
     }
   }

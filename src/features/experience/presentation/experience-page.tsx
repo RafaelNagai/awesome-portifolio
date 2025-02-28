@@ -6,9 +6,6 @@ import { BaseTimeline, TimelineBranch } from "./components/timeline/timeline";
 export const ExperiencePage: React.FC = () => {
   return (
     <div className="experience">
-      <TimelineBranch className="experience__item">
-        <JobItem />
-      </TimelineBranch>
       <BaseTimeline />
       <TimelineBranch className="experience__item">
         <JobItem />
@@ -16,14 +13,15 @@ export const ExperiencePage: React.FC = () => {
       <TimelineBranch className="experience__item">
         <JobItem />
       </TimelineBranch>
-      <BaseTimeline />
       <TimelineBranch className="experience__item">
         <JobItem />
       </TimelineBranch>
       <TimelineBranch className="experience__item">
         <JobItem />
       </TimelineBranch>
-      <BaseTimeline />
+      <TimelineBranch className="experience__item">
+        <JobItem />
+      </TimelineBranch>
     </div>
   );
 };

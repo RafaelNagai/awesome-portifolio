@@ -1,12 +1,19 @@
 @use "sass:map";
 @use "../../../../../core/sass/color.scss" as *;
+@use "../../../../../core/sass/responsive.scss" as *;
 
 .job-card {
-  width: 30vw;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  padding: 0 1rem;
+  @include responsive-property(
+    padding,
+    0 1.5rem,
+    0 1.5rem,
+    0 1rem,
+    0 1rem,
+    0 1rem
+  );
 
   &__skills {
     display: flex;
@@ -26,11 +33,18 @@
 
 // I just find this way to align the skills to the right and left side according item position
 .experience {
-  &__item:nth-of-type(3n + 4),
+  &__item:nth-of-type(even),
   &__item:first-of-type {
     .job-card {
       &__skills {
-        flex-direction: row-reverse;
+        @include responsive-property(
+          flex-direction,
+          row,
+          row,
+          row-reverse,
+          row-reverse,
+          row-reverse
+        );
       }
     }
   }
