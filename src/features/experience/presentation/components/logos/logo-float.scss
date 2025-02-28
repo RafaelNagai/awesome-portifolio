@@ -1,19 +1,21 @@
 .logo {
-  &__android {
-    width: 9vw;
-  }
-
-  &__react {
-    width: 6vw;
+  &__flutter {
+    width: 25vw;
     filter: blur(2px);
   }
 
-  &__flutter {
-    width: 15vw;
+  &__android {
+    width: 18vw;
+    filter: blur(5px);
+  }
+
+  &__react {
+    width: 14vw;
+    filter: blur(2px);
   }
 
   &__csharp {
-    width: 8vw;
+    width: 22vw;
     filter: blur(3px);
   }
 }

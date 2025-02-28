@@ -2,9 +2,10 @@ import React from "react";
 import { TimelineItem } from "./components/timeline/timeline-item/timeline-item";
 import "./experience-page.scss";
 import { BaseTimeline, TimelineBranch } from "./components/timeline/timeline";
-import { LogoFloat } from "./components/logos/logo-float";
+import { Logo1Float } from "./components/logos/logo1-float";
 import { useTranslation } from "react-i18next";
 import { YoutubeFloat } from "./components/youtube/youtube-float";
+import { Logo2Float } from "./components/logos/logo2-float";
 
 export const ExperiencePage: React.FC = () => {
   const { t } = useTranslation();
@@ -75,7 +76,7 @@ export const ExperiencePage: React.FC = () => {
       <div className="experience">
         <BaseTimeline />
         <TimelineBranch className="experience__item item-1">
-          <LogoFloat />
+          <Logo1Float />
           {experienceJob}
         </TimelineBranch>
         <TimelineBranch className="experience__item item-2">
@@ -85,8 +86,13 @@ export const ExperiencePage: React.FC = () => {
         <TimelineBranch className="experience__item">
           {education}
         </TimelineBranch>
-        <TimelineBranch className="experience__item">{language}</TimelineBranch>
-        <TimelineBranch className="experience__item">{hobbies}</TimelineBranch>
+        <TimelineBranch className="experience__item">
+          <Logo2Float />
+          {language}
+        </TimelineBranch>
+        <TimelineBranch className="experience__item item-3">
+          {hobbies}
+        </TimelineBranch>
       </div>
     </>
   );
