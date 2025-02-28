@@ -1,0 +1,21 @@
+@use "../../../core/sass/responsive.scss" as *;
+
+.parallax {
+  position: absolute;
+  font-size: 3rem;
+  transition: transform 0.1s linear;
+  z-index: -1;
+  opacity: 0.4;
+
+  &--left {
+    left: -100px;
+  }
+
+  &--right {
+    right: -100px;
+  }
+
+  @include responsive(md) {
+    opacity: 1;
+  }
+}
