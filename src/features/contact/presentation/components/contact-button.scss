@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "../../../../core/sass/color.scss" as *;
+
+.contact-button {
+  padding: 0.5rem 1rem;
+  background-color: map.get($colors, secondary, main);
+  border-radius: 5rem;
+  border: none;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  transition: all;
+}
