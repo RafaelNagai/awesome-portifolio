@@ -35,6 +35,41 @@ export const ExperiencePage: React.FC = () => {
     />
   );
 
+  const education = (
+    <TimelineItem
+      title={t("experience.education.title")}
+      description={t("experience.education.description")}
+      options={[
+        t("experience.education.skills.software"),
+        t("experience.education.skills.mobile"),
+        t("experience.education.skills.web"),
+      ]}
+    />
+  );
+
+  const language = (
+    <TimelineItem
+      title={t("experience.language.title")}
+      description={t("experience.language.description")}
+      options={[
+        t("experience.language.skills.english"),
+        t("experience.language.skills.portuguese"),
+      ]}
+    />
+  );
+
+  const hobbies = (
+    <TimelineItem
+      title={t("experience.hobbie.title")}
+      description={t("experience.hobbie.description")}
+      options={[
+        t("experience.hobbie.skills.lol"),
+        t("experience.hobbie.skills.valorant"),
+        t("experience.hobbie.skills.trpg"),
+      ]}
+    />
+  );
+
   return (
     <>
       <div className="experience">
@@ -48,14 +83,10 @@ export const ExperiencePage: React.FC = () => {
           {youtubeChannel}
         </TimelineBranch>
         <TimelineBranch className="experience__item">
-          {experienceJob}
+          {education}
         </TimelineBranch>
-        <TimelineBranch className="experience__item">
-          {experienceJob}
-        </TimelineBranch>
-        <TimelineBranch className="experience__item">
-          {experienceJob}
-        </TimelineBranch>
+        <TimelineBranch className="experience__item">{language}</TimelineBranch>
+        <TimelineBranch className="experience__item">{hobbies}</TimelineBranch>
       </div>
     </>
   );

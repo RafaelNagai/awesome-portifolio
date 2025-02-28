@@ -24,6 +24,32 @@
       "skills": {
         "pubdev": "Pub Dev"
       }
+    },
+    "education": {
+      "title": "Education",
+      "description": "I hold a degree in Analysis and Development of Systems and have furthered my education by studying web front-end development at Cornerstone. This has helped me strengthen my skills and broaden my expertise in the field of technology.",
+      "skills": {
+        "software": "Software Engineer",
+        "mobile": "Mobile Developer",
+        "web": "Web Developer"
+      }
+    },
+    "language": {
+      "title": "Language",
+      "description": "I am proficient in both English and Portuguese. I enhanced my language skills through exchange programs in Ireland and Canada, which helped me gain a deeper understanding of different cultures and improve my communication abilities.",
+      "skills": {
+        "english": "English",
+        "portuguese": "Portuguese"
+      }
+    },
+    "hobbie": {
+      "title": "hobbie",
+      "description": "In my free time, I enjoy playing games, drawing, and serving as a Game Master for tabletop RPGs (TRPGs). These hobbies allow me to be creative, think strategically, and engage in storytelling with others.",
+      "skills": {
+        "lol": "League of Legends",
+        "valorant": "Valorant",
+        "trpg": "TRPG"
+      }
     }
   }
 }
