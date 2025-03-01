@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../../../../core/sass/color.scss" as *;
+@use "../../../../../core/sass/color.scss" as *;
 
 .contact-button {
   padding: 0.5rem 1rem;
@@ -10,9 +10,10 @@
   right: 1rem;
   top: 0;
   animation: expandAnimationBack 0.4s ease-in-out;
+  z-index: -1;
 
   &--expanded {
-    animation: expandAnimation 0.4s ease-in-out forwards;
+    animation: expandAnimation 0.6s ease-in-out forwards;
   }
 }
 

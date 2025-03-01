@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./contact-page.scss";
-import { ContactButton } from "./components/contact-button";
+import { ContactButton } from "./components/contact-button/contact-button";
+import { ContactContent } from "./components/contact-content/contact-content";
+import { FadeInOut } from "../../../core/animations/fade";
 
 export const ContactPage: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -12,13 +14,13 @@ export const ContactPage: React.FC = () => {
     const onScrollHandler = () => {
       if (ref.current && buttonElement) {
         //expand
-        const relativeTopPage = ref.current.offsetTop;
-        const { height } = ref.current.getBoundingClientRect();
-        const _isExpanded = window.scrollY + height > relativeTopPage;
+        const heightScreen = window.innerHeight;
+        const { top } = ref.current.getBoundingClientRect();
+        const _isExpanded = top < heightScreen;
         setIsExpanded(_isExpanded);
 
         //position
-        const heightScreen = window.innerHeight;
+        const relativeTopPage = ref.current.offsetTop;
         const heightButton = buttonElement.getBoundingClientRect().height;
         const paddingBottom = 16;
         const topPosition =
@@ -39,6 +41,9 @@ export const ContactPage: React.FC = () => {
   return (
     <div ref={ref} className="contact">
       <ContactButton isExpanded={isExpanded} />
+      <FadeInOut>
+        <ContactContent />
+      </FadeInOut>
     </div>
   );
 };

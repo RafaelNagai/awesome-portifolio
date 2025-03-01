@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "../../../../../core/sass/color.scss" as *;
+@use "../../../../../core/sass/responsive.scss" as *;
+
+.contact-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  @include responsive-property(flex-direction, column, column, row, row, row);
+
+  &__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+
+  &__title {
+    font-size: 3rem;
+    color: map.get($colors, primary, main);
+    text-shadow: 4px 4px 2px rgba(black, 0.4);
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+  }
+
+  &__social-medias {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 7vw;
+    height: 7vw;
+    & img {
+      border-radius: 50%;
+      background-color: white;
+      padding: 5px;
+      object-fit: contain;
+    }
+  }
+}
