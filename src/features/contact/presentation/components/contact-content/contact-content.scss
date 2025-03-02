@@ -22,6 +22,7 @@
     font-size: 3rem;
     color: map.get($colors, primary, main);
     text-shadow: 4px 4px 2px rgba(black, 0.4);
+    text-align: center;
   }
 
   &__subtitle {
@@ -37,8 +38,8 @@
   }
 
   &__icon {
-    width: 7vw;
-    height: 7vw;
+    @include responsive-property(width, 12vw, 12vw, 7vw, 7vw, 7vw);
+    @include responsive-property(height, 12vw, 12vw, 7vw, 7vw, 7vw);
     & img {
       border-radius: 50%;
       background-color: white;

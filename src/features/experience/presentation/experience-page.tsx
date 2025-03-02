@@ -79,11 +79,11 @@ export const ExperiencePage: React.FC = () => {
           <Logo1Float />
           {experienceJob}
         </TimelineBranch>
-        <TimelineBranch className="experience__item item-2">
+        <TimelineBranch className="experience__item">
           <YoutubeFloat />
           {youtubeChannel}
         </TimelineBranch>
-        <TimelineBranch className="experience__item">
+        <TimelineBranch className="experience__item item-2">
           {education}
         </TimelineBranch>
         <TimelineBranch className="experience__item">

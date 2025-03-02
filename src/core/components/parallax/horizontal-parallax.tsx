@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./horizontal-parallax.scss";
 
 type HorizontalParallaxProps = {
@@ -18,7 +18,6 @@ export const HorizontalParallax: React.FC<HorizontalParallaxProps> = ({
   side,
   onProgress,
 }) => {
-  //const [offsetX, setOffsetX] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,13 +34,6 @@ export const HorizontalParallax: React.FC<HorizontalParallaxProps> = ({
       if (ref.current && target) {
         onProgress(progress, ref.current, target);
       }
-
-      // let offsetX = progress * (width / 2);
-      // if (side === "right") {
-      //   offsetX *= -1;
-      // }
-
-      // setOffsetX(offsetX);
     };
 
     window.addEventListener("scroll", handleScroll);

@@ -11,10 +11,9 @@ export const Logo1Float: React.FC = () => {
     target: HTMLDivElement
   ) => {
     const { width } = target.getBoundingClientRect();
-    element.style.transform = `translateX(-${
-      progress * (width * 0.1)
-    }px) rotate(${30 * progress}deg)`;
-    element.style.marginTop = `${progress * 100}px`;
+    element.style.transform = `translate(-${progress * (width * 0.2)}px, ${
+      progress * 100
+    }px) rotate(${20 * progress}deg)`;
   };
 
   const onFlutterProgress = (
