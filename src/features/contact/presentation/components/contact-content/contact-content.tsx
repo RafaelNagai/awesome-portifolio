@@ -12,13 +12,25 @@ export const ContactContent: React.FC = () => {
         <h2 className="contact-content__title">Rafael Kenji Sales Nagai</h2>
         <h4 className="contact-content__subtitle">• Software Engineer •</h4>
         <div className="contact-content__social-medias">
-          <a className="contact-content__icon" href={SocialMedia.github}>
+          <a
+            className="contact-content__icon"
+            target="_blank"
+            href={SocialMedia.github}
+          >
             <img className="contact-content__icon" src={githubIcon} />
           </a>
-          <a className="contact-content__icon" href={SocialMedia.linkedin}>
+          <a
+            className="contact-content__icon"
+            target="_blank"
+            href={SocialMedia.linkedin}
+          >
             <img className="contact-content__icon" src={linkedinIcon} />
           </a>
-          <a className="contact-content__icon" href={SocialMedia.youtube}>
+          <a
+            className="contact-content__icon"
+            target="_blank"
+            href={SocialMedia.youtube}
+          >
             <img className="contact-content__icon" src={pubdevIcon} />
           </a>
         </div>

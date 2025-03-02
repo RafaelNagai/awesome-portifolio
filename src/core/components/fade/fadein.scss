@@ -1,10 +1,10 @@
 .fadeout {
   &--up {
-    animation: fadeOutUpAnimation 1s ease-in-out forwards;
+    animation: fadeOutUpAnimation 1.5s ease-in-out forwards;
   }
 
   &--down {
-    animation: fadeOutDownAnimation 1s ease-in-out forwards;
+    animation: fadeOutDownAnimation 1.5s ease-in-out forwards;
   }
 }
 
