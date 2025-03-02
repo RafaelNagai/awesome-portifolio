@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./iterative-background.scss";
+import useIsMobile from "../../../core/components/mobile/is-mobile";
 
 type IterativeBackgroundProps = {
   src: string;
@@ -12,6 +13,8 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
   delay = 10,
   children,
 }) => {
+  const isMobile = useIsMobile();
+
   const setCircleVisible = (show: boolean) => {
     const circles = document.querySelectorAll<HTMLDivElement>(
       ".iterative-mouse__circle"
@@ -66,11 +69,12 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
       circles.forEach((circle: HTMLDivElement) => {
         circle.style.backgroundPositionY = `-${window.scrollY}px`;
       });
-      //onOutOfContainer(circles[0].getBoundingClientRect().bottom);
     };
 
-    document.addEventListener("mousemove", onMoveMouse);
-    document.addEventListener("scroll", onUpdateImagePosition);
+    if (!isMobile) {
+      document.addEventListener("mousemove", onMoveMouse);
+      document.addEventListener("scroll", onUpdateImagePosition);
+    }
     return () => {
       document.removeEventListener("mousemove", onMoveMouse);
       document.removeEventListener("scroll", onUpdateImagePosition);
@@ -96,19 +100,21 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
     >
-      <div className="iterative-mouse">
-        {Array(15)
-          .fill(1)
-          .map((_, index) => (
-            <div
-              key={index}
-              className={`iterative-mouse__circle iterative-mouse__circle--${index}`}
-              style={{
-                ...backgroundUrl,
-              }}
-            />
-          ))}
-      </div>
+      {!isMobile && (
+        <div className="iterative-mouse">
+          {Array(15)
+            .fill(1)
+            .map((_, index) => (
+              <div
+                key={index}
+                className={`iterative-mouse__circle iterative-mouse__circle--${index}`}
+                style={{
+                  ...backgroundUrl,
+                }}
+              />
+            ))}
+        </div>
+      )}
       {children}
     </div>
   );
