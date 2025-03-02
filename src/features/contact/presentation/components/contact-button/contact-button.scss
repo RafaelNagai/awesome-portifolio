@@ -3,7 +3,7 @@
 
 .contact-button {
   padding: 0.5rem 1rem;
-  background-color: map.get($colors, secondary, main);
+  background-color: map.get($colors, secondary, darker);
   border-radius: 5rem;
   border: none;
   position: absolute;
@@ -16,10 +16,12 @@
   box-shadow: 4px 4px 10px rgba(map.get($colors, secondary, darker), 0.7),
     inset 2px 2px 3px rgba(map.get($colors, secondary, lighter), 0.8);
   text-align: center;
+  border: 1px solid white;
 
   &--expanded {
     animation: expandAnimation 0.6s ease-in-out forwards;
     cursor: auto;
+    border: none;
   }
 
   &--contracted {
