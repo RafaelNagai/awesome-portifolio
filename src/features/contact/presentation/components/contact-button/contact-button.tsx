@@ -6,6 +6,8 @@ import githubIcon from "../../../../../assets/icons/github-icon.png";
 import linkedinIcon from "../../../../../assets/icons/linkedin-icon.png";
 import { SocialMedia } from "../../../domain/social-media";
 import { FadeInOut } from "../../../../../core/components/fade/fade";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 type ContactButtonProps = {
   isExpanded: boolean;
@@ -16,7 +18,7 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
 
   const onTap = () => {
-    setIsOpened(true);
+    setIsOpened(!isOpened);
   };
 
   return (
@@ -26,9 +28,16 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
       }`}
       onClick={onTap}
     >
-      <p className={`${isExpanded && "contact-button--hide"}`}>
-        {t("contact")}
-      </p>
+      {isOpened ? (
+        <FontAwesomeIcon
+          className={`${isExpanded && "contact-button--hide"}`}
+          icon={faClose}
+        />
+      ) : (
+        <p className={`${isExpanded && "contact-button--hide"}`}>
+          {t("contact")}
+        </p>
+      )}
 
       <div
         className={`contact-button__container ${
@@ -36,19 +45,31 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
         }`}
       >
         <FadeInOut isScrollableEvent={false} delay={0}>
-          <a className="contact-button__item" href={SocialMedia.linkedin}>
+          <a
+            className="contact-button__item"
+            target="_blank"
+            href={SocialMedia.linkedin}
+          >
             <img className="contact-button__icon" src={linkedinIcon} />
             <p className="contact-button__title-icon">LinkedIn</p>
           </a>
         </FadeInOut>
         <FadeInOut isScrollableEvent={false} delay={500}>
-          <a className="contact-button__item" href={SocialMedia.github}>
+          <a
+            className="contact-button__item"
+            target="_blank"
+            href={SocialMedia.github}
+          >
             <img className="contact-button__icon" src={githubIcon} />
             <p className="contact-button__title-icon">Github</p>
           </a>
         </FadeInOut>
         <FadeInOut isScrollableEvent={false} delay={1000}>
-          <a className="contact-button__item" href={SocialMedia.youtube}>
+          <a
+            className="contact-button__item"
+            target="_blank"
+            href={SocialMedia.youtube}
+          >
             <img className="contact-button__icon" src={pubdevIcon} />
             <p className="contact-button__title-icon">Youtube</p>
           </a>
