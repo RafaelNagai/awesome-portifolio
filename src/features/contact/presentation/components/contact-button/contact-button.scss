@@ -11,9 +11,15 @@
   top: 0;
   animation: expandAnimationBack 0.4s ease-in-out;
   z-index: -1;
+  font-size: 1.3rem;
+  color: white;
 
   &--expanded {
     animation: expandAnimation 0.6s ease-in-out forwards;
+  }
+
+  &--hide {
+    display: none;
   }
 }
 

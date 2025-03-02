@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "./core/sass/color.scss" as *;
+
 :root {
   font-family: "Agdasima", serif;
   font-weight: 400;
@@ -24,6 +27,7 @@ h6 {
 
 body {
   overflow-x: hidden;
+  background-color: map.get($colors, background);
 }
 
 .test {

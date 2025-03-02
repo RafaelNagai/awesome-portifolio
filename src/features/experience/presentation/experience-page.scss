@@ -1,11 +1,14 @@
 @use "sass:map";
 @use "../../../core/sass/responsive.scss" as *;
+@use "../../../core/sass/color.scss" as *;
 
 .experience {
   display: grid;
   justify-content: center;
   grid-template-rows: auto;
   position: relative;
+  background-color: map.get($colors, background);
+  z-index: 0;
   @include responsive-property(
     grid-template-columns,
     1fr,
