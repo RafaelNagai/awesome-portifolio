@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./contact-page.scss";
 import { ContactButton } from "./components/contact-button/contact-button";
 import { ContactContent } from "./components/contact-content/contact-content";
-import { FadeInOut } from "../../../core/animations/fade";
+import { FadeInOut } from "../../../core/components/fade/fade";
 
 export const ContactPage: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,6 +32,7 @@ export const ContactPage: React.FC = () => {
       }
     };
     document.addEventListener("scroll", onScrollHandler);
+    onScrollHandler();
 
     return () => {
       document.removeEventListener("scroll", onScrollHandler);
@@ -41,7 +42,7 @@ export const ContactPage: React.FC = () => {
   return (
     <div ref={ref} className="contact">
       <ContactButton isExpanded={isExpanded} />
-      <FadeInOut>
+      <FadeInOut directionUp={false}>
         <ContactContent />
       </FadeInOut>
     </div>

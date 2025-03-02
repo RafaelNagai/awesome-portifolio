@@ -30,6 +30,7 @@ body {
   background-color: map.get($colors, background);
 }
 
-.test {
-  height: 1000px;
+a {
+  text-decoration: none;
+  color: inherit;
 }

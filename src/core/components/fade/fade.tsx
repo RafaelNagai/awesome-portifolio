@@ -3,9 +3,17 @@ import "./fadein.scss";
 
 type FadeInOutProps = {
   children: React.ReactNode;
+  isScrollableEvent?: boolean;
+  delay?: number;
+  directionUp?: boolean;
 };
 
-export const FadeInOut: React.FC<FadeInOutProps> = ({ children }) => {
+export const FadeInOut: React.FC<FadeInOutProps> = ({
+  children,
+  isScrollableEvent = true,
+  delay = 0,
+  directionUp = true,
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const [startAnimation, setStartAnimation] = useState<boolean>(false);
 
@@ -15,17 +23,23 @@ export const FadeInOut: React.FC<FadeInOutProps> = ({ children }) => {
         const heightScreen = window.innerHeight;
         const { top } = ref.current.getBoundingClientRect();
         const start = top < heightScreen;
-        setStartAnimation(start);
+        setTimeout(() => {
+          setStartAnimation(start);
+        }, delay);
       }
     };
-    document.addEventListener("scroll", onScrollHandler);
+    if (isScrollableEvent) document.addEventListener("scroll", onScrollHandler);
+    else onScrollHandler();
 
     return () => {
       document.removeEventListener("scroll", onScrollHandler);
     };
   }, []);
+
+  const animationClass = directionUp ? "fadeout--up" : "fadeout--down";
+
   return (
-    <div ref={ref} className={`${startAnimation && "fadeout"}`}>
+    <div ref={ref} className={`${startAnimation && animationClass}`}>
       {children}
     </div>
   );

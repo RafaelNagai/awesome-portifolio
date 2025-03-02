@@ -13,9 +13,77 @@
   z-index: -1;
   font-size: 1.3rem;
   color: white;
+  box-shadow: 4px 4px 10px rgba(map.get($colors, secondary, darker), 0.7),
+    inset 2px 2px 3px rgba(map.get($colors, secondary, lighter), 0.8);
+  text-align: center;
 
   &--expanded {
     animation: expandAnimation 0.6s ease-in-out forwards;
+    cursor: auto;
+  }
+
+  &--contracted {
+    cursor: pointer;
+    &:active {
+      background-color: map.get($colors, secondary, darker);
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: end;
+    position: absolute;
+    bottom: 140%;
+    right: 0;
+  }
+
+  &__item {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    &::after {
+      content: "";
+      width: 5px;
+      height: 100%;
+      background-color: map.get($colors, primary, main);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        -90deg,
+        map.get($colors, secondary, darker),
+        map.get($colors, secondary, darker),
+        rgba(255, 255, 255, 0)
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 0;
+    }
+  }
+
+  &__icon {
+    height: 35px;
+    width: 35px;
+    object-fit: contain;
+    z-index: 0;
+    border-radius: 50%;
+    background-color: white;
+    padding: 2px;
+  }
+
+  &__title-icon {
+    padding-right: 20px;
+    z-index: 0;
   }
 
   &--hide {

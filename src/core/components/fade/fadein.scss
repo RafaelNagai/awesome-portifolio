@@ -1,0 +1,31 @@
+.fadeout {
+  &--up {
+    animation: fadeOutUpAnimation 1s ease-in-out forwards;
+  }
+
+  &--down {
+    animation: fadeOutDownAnimation 1s ease-in-out forwards;
+  }
+}
+
+@keyframes fadeOutDownAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeOutUpAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

@@ -27,10 +27,12 @@
   &__title {
     font-size: 4rem;
     color: map.get($colors, primary, main);
+    text-shadow: 4px 4px 8px rgba(black, 0.7);
   }
 
   &__summary {
     font-size: 1rem;
     color: white;
+    text-shadow: 1px 1px 0 black;
   }
 }
