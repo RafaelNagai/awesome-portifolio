@@ -1,0 +1,55 @@
+{
+  "introduction": {
+    "description": "I am a trusted mobile developer with 8+ years of experience in Flutter and cross-platform development. I started in IT support at WIT Solutions before transitioning to development, working with PhoneGap, JavaScript, and PHP. I contributed to a Xamarin startup and played a key role in Liberty Mutual’s Aliro project using C# MVC 5. In 2018, I specialized in Xamarin Forms, earning certifications and leading an ASP.NET migration. After studying English in Ireland (B2 PET Cambridge), I focused on Flutter, taking Tech Lead roles at Camino Education and ArcTouch, delivering high-quality Android and iOS applications."
+  },
+  "experience": {
+    "job": {
+      "title": "Job Experience",
+      "description": "I have 8+ years of experience in web and mobile development, specializing in Flutter. I’ve worked with ArcTouch, Camino Education, Yamaha Group, Safra Bank, and Liberty Mutual, using technologies like Kotlin, Swift, C#, and JavaScript.",
+      "skills": {
+        "flutter": "Flutter",
+        "android": "Android",
+        "ios": "iOS",
+        "csharp": "C#",
+        "react": "React",
+        "sass": "Sass",
+        "agile": "Agile",
+        "scrum": "Scrum",
+        "kanban": "Kanban"
+      }
+    },
+    "youtube": {
+      "title": "Youtube Channel",
+      "description": "I co-founded Pub Dev, a YouTube channel focused on Flutter development, where I create content to simplify complex topics. Teaching is something I enjoy, whether mentoring developers or creating tutorials, as it helps others grow while reinforcing my own knowledge.",
+      "skills": {
+        "pubdev": "Pub Dev"
+      }
+    },
+    "education": {
+      "title": "Education",
+      "description": "I hold a degree in Analysis and Development of Systems and have furthered my education by studying web front-end development at Cornerstone. This has helped me strengthen my skills and broaden my expertise in the field of technology.",
+      "skills": {
+        "software": "Software Engineer",
+        "mobile": "Mobile Developer",
+        "web": "Web Developer"
+      }
+    },
+    "language": {
+      "title": "Language",
+      "description": "I am proficient in both English and Portuguese. I enhanced my language skills through exchange programs in Ireland and Canada, which helped me gain a deeper understanding of different cultures and improve my communication abilities.",
+      "skills": {
+        "english": "English",
+        "portuguese": "Portuguese"
+      }
+    },
+    "hobbie": {
+      "title": "hobbie",
+      "description": "In my free time, I enjoy playing games, drawing, and serving as a Game Master for tabletop RPGs (TRPGs). These hobbies allow me to be creative, think strategically, and engage in storytelling with others.",
+      "skills": {
+        "lol": "League of Legends",
+        "valorant": "Valorant",
+        "trpg": "TRPG"
+      }
+    }
+  }
+}

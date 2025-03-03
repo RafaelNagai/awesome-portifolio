@@ -1,0 +1,17 @@
+@use "../../../core/sass/responsive.scss" as *;
+
+.parallax {
+  position: absolute;
+  font-size: 3rem;
+  transition: transform 0.1s linear;
+  z-index: -1;
+  opacity: 0.1;
+
+  &--left {
+    left: 0;
+  }
+
+  &--right {
+    right: 0px;
+  }
+}

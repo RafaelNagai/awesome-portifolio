@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "../../../../../core/sass/responsive.scss" as *;
+
+.logo {
+  &__flutter {
+    filter: blur(2px);
+    @include responsive-property(width, 50vw, 50vw, 25vw, 25vw, 25vw);
+  }
+
+  &__android {
+    @include responsive-property(width, 40vw, 40vw, 18vw, 18vw, 18vw);
+    @include responsive-property(blur, 3vw, 3vw, 5px, 5px, 5px);
+  }
+
+  &__react {
+    @include responsive-property(width, 50vw, 50vw, 14vw, 14vw, 14vw);
+    @include responsive-property(blur, 1vw, 1vw, 2px, 2px, 2px);
+  }
+
+  &__csharp {
+    @include responsive-property(width, 60vw, 60vw, 22vw, 22vw, 22vw);
+    @include responsive-property(blur, 2vw, 2vw, 3px, 3px, 3px);
+  }
+}

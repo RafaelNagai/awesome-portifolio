@@ -1,0 +1,20 @@
+.language-button {
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  &--not-selected {
+    filter: grayscale(100%);
+    opacity: 0.5;
+  }
+
+  &:active {
+    filter: contrast(120%);
+  }
+}
