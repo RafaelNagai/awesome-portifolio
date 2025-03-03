@@ -4,8 +4,10 @@ import linkedinIcon from "../../../../../assets/icons/linkedin-icon.png";
 
 import "./contact-content.scss";
 import { SocialMedia } from "../../../domain/social-media";
+import { useTranslation } from "react-i18next";
 
 export const ContactContent: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="contact-content">
       <div className="contact-content__container">
@@ -34,6 +36,19 @@ export const ContactContent: React.FC = () => {
             <img className="contact-content__icon" src={pubdevIcon} />
           </a>
         </div>
+      </div>
+      <div className="github-access">
+        <p>
+          {t("code.1")}
+          <a
+            href="https://github.com/RafaelNagai/awesome-portifolio"
+            target="_blank"
+            className="github-access__link"
+          >
+            {t("code.2")}
+          </a>
+          {t("code.3")}
+        </p>
       </div>
     </div>
   );
