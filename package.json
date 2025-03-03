@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "sass": "npx sass --watch src/:css/",
+    "dev": "vite",
     "build": "vite build",
-    "dev": "vite"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
