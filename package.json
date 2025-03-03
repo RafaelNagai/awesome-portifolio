@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "sass": "npx sass --watch src/:css/",
+    "build": "vite build",
     "dev": "vite"
   },
   "dependencies": {

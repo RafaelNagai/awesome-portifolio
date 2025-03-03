@@ -3,8 +3,8 @@
 
 .logo {
   &__flutter {
-    @include responsive-property(width, 50vw, 50vw, 25vw, 25vw, 25vw);
     filter: blur(2px);
+    @include responsive-property(width, 50vw, 50vw, 25vw, 25vw, 25vw);
   }
 
   &__android {
