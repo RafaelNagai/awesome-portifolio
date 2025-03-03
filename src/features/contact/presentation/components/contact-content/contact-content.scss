@@ -5,9 +5,9 @@
 .contact-content {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   z-index: 1;
-  @include responsive-property(flex-direction, column, column, row, row, row);
 
   &__container {
     flex: 1;
@@ -47,5 +47,17 @@
       padding: 5px;
       object-fit: contain;
     }
+  }
+}
+
+.github-access {
+  display: flex;
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  &__link {
+    color: map.get($colors, primary, main);
+    cursor: pointer;
   }
 }

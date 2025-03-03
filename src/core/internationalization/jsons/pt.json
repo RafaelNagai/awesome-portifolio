@@ -51,5 +51,10 @@
         "trpg": "TRPG"
       }
     }
+  },
+  "code": {
+    "1": "O codigo do site esta disponivel ",
+    "2": "aqui",
+    "3": ". Obrigado pela visita!"
   }
 }

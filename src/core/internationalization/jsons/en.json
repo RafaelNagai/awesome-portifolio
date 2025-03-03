@@ -51,5 +51,10 @@
         "trpg": "TRPG"
       }
     }
+  },
+  "code": {
+    "1": "The code for this website is available ",
+    "2": "here",
+    "3": ". Thank you for visiting!"
   }
 }
