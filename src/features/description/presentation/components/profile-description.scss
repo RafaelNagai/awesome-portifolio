@@ -3,8 +3,10 @@
 
 .profile-description {
   position: relative;
-  height: 300px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
   &::before {
     content: "";
@@ -15,17 +17,16 @@
     height: 300px;
     border-radius: 50%;
     background-color: map.get($colors, primary, main);
+    z-index: -1;
   }
 
   &::after {
     content: "";
-    position: absolute;
     background-image: url("/src/assets/rafael-description.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
     height: 300px;
     width: 300px;
-    bottom: 0;
   }
 }

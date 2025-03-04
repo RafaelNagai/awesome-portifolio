@@ -11,6 +11,10 @@
   background-color: map.get($colors, secondary, main);
   padding-top: 1rem;
 
+  &__column {
+    flex: 1;
+  }
+
   &__container {
     display: flex;
     @include responsive-property(align-items, center, center, end, end, end);
