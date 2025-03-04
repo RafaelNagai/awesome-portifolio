@@ -20,10 +20,7 @@ export const IntroductionPage: React.FC = () => {
           {isMobile && (
             <img className="introduction__profile-image" src={profile} />
           )}
-          <h1 className="introduction__title">Rafael Kenji Sales Nagai</h1>
-          <div className="introduction__summary">
-            {t("introduction.description")}
-          </div>
+          <h1 className="introduction__title">Impact phrase UAU</h1>
         </div>
       </div>
     </IterativeBackground>
