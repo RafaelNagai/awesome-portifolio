@@ -6,6 +6,7 @@ import { Logo1Float } from "./components/logos/logo1-float";
 import { useTranslation } from "react-i18next";
 import { YoutubeFloat } from "./components/youtube/youtube-float";
 import { Logo2Float } from "./components/logos/logo2-float";
+import { directionFade, FadeInOut } from "../../../core/components/fade/fade";
 
 export const ExperiencePage: React.FC = () => {
   const { t } = useTranslation();
@@ -75,23 +76,22 @@ export const ExperiencePage: React.FC = () => {
     <>
       <div className="experience">
         <BaseTimeline />
-        <TimelineBranch className="experience__item item-1">
-          <Logo1Float />
-          {experienceJob}
+        <TimelineBranch className="experience__item">
+          <FadeInOut direction={directionFade.left}>{experienceJob}</FadeInOut>
         </TimelineBranch>
         <TimelineBranch className="experience__item">
-          <YoutubeFloat />
-          {youtubeChannel}
-        </TimelineBranch>
-        <TimelineBranch className="experience__item item-2">
-          {education}
+          <FadeInOut direction={directionFade.right}>
+            {youtubeChannel}
+          </FadeInOut>
         </TimelineBranch>
         <TimelineBranch className="experience__item">
-          <Logo2Float />
-          {language}
+          <FadeInOut direction={directionFade.left}>{education}</FadeInOut>
         </TimelineBranch>
-        <TimelineBranch className="experience__item item-3">
-          {hobbies}
+        <TimelineBranch className="experience__item">
+          <FadeInOut direction={directionFade.right}>{language}</FadeInOut>
+        </TimelineBranch>
+        <TimelineBranch className="experience__item">
+          <FadeInOut direction={directionFade.left}>{hobbies}</FadeInOut>
         </TimelineBranch>
       </div>
     </>

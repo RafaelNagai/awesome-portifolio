@@ -1,18 +1,27 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./fadein.scss";
 
+export enum directionFade {
+  right,
+  left,
+  up,
+  down,
+}
+
 type FadeInOutProps = {
   children: React.ReactNode;
   isScrollableEvent?: boolean;
   delay?: number;
-  directionUp?: boolean;
+  direction?: directionFade;
+  className?: string;
 };
 
 export const FadeInOut: React.FC<FadeInOutProps> = ({
   children,
   isScrollableEvent = true,
   delay = 0,
-  directionUp = true,
+  direction = directionFade.up,
+  className,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [startAnimation, setStartAnimation] = useState<boolean>(false);
@@ -36,10 +45,27 @@ export const FadeInOut: React.FC<FadeInOutProps> = ({
     };
   }, []);
 
-  const animationClass = directionUp ? "fadeout--up" : "fadeout--down";
+  let animationClass;
+  switch (direction) {
+    case directionFade.up:
+      animationClass = "fadeout--up";
+      break;
+    case directionFade.down:
+      animationClass = "fadeout--down";
+      break;
+    case directionFade.left:
+      animationClass = "fadeout--left";
+      break;
+    case directionFade.right:
+      animationClass = "fadeout--right";
+      break;
+  }
 
   return (
-    <div ref={ref} className={`${startAnimation && animationClass}`}>
+    <div
+      ref={ref}
+      className={`${startAnimation && animationClass} ${className}`}
+    >
       {children}
     </div>
   );
