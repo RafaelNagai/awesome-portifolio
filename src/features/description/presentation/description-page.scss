@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "../../../core/sass/color.scss" as *;
+@use "../../../core/sass/responsive.scss" as *;
+
+.description {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-color: map.get($colors, secondary, main);
+  padding-top: 1rem;
+
+  &__container {
+    display: flex;
+    @include responsive-property(align-items, center, center, end, end, end);
+    @include responsive-property(
+      flex-direction,
+      column-reverse,
+      column-reverse,
+      row,
+      row,
+      row
+    );
+    @include responsive-property(width, 100%, 100%, 90vw, 70vw, 70vw);
+  }
+
+  &__content {
+    padding: 2rem;
+    flex: 1;
+  }
+
+  &__title {
+    color: map.get($colors, primary, main);
+    text-shadow: 4px 4px 8px rgba(black, 0.7);
+    width: 100%;
+    @include responsive-property(font-size, 2rem, 2rem, 4rem, 4rem, 4rem);
+  }
+
+  &__summary {
+    color: white;
+    font-size: 1.3rem;
+  }
+}
