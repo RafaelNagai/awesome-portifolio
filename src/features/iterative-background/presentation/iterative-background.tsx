@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./iterative-background.scss";
 import useIsMobile from "../../../core/components/mobile/is-mobile";
 
@@ -13,15 +13,13 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
   delay = 10,
   children,
 }) => {
+  const backgroundRef = useRef<HTMLDivElement>(null);
+  const circlesRef = useRef<HTMLDivElement[]>([]);
   const isMobile = useIsMobile();
 
   const setCircleVisible = (show: boolean) => {
-    const circles = document.querySelectorAll<HTMLDivElement>(
-      ".iterative-mouse__circle"
-    );
-    const container = document.querySelector<HTMLDivElement>(
-      ".iterative-background"
-    );
+    const circles = circlesRef.current;
+    const container = backgroundRef.current;
     if (container && circles) {
       if (show) {
         container.style.cursor = "none";
@@ -38,21 +36,19 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
   };
 
   useEffect(() => {
-    const container = document.querySelector<HTMLDivElement>(
-      ".iterative-background"
-    );
-    const circles = document.querySelectorAll<HTMLDivElement>(
-      ".iterative-mouse__circle"
-    );
+    const container = backgroundRef.current;
+    const circles = circlesRef.current;
+
+    if (!container || !circles) return;
+
     const onOutOfContainer = (mousePosition: number) => {
-      if (container) {
-        if (mousePosition > container.getBoundingClientRect().height) {
-          setCircleVisible(false);
-        } else {
-          setCircleVisible(true);
-        }
+      if (mousePosition > container.getBoundingClientRect().height) {
+        setCircleVisible(false);
+      } else {
+        setCircleVisible(true);
       }
     };
+
     const onMoveMouse = ({ pageX, pageY }: MouseEvent) => {
       for (let i = 0; i < circles.length; i++) {
         const size = circles[i].getBoundingClientRect().height;
@@ -65,68 +61,56 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
         }, delay * i);
       }
     };
+
     const onUpdateImagePosition = () => {
       circles.forEach((circle: HTMLDivElement) => {
         circle.style.backgroundPositionY = `-${window.scrollY}px`;
       });
     };
 
-    const hideCurrentCursor = () => {
-      const cursor = document.querySelector<HTMLDivElement>(".custom-cursor");
-      cursor!.style.display = "none";
-    };
+    document.addEventListener("mousemove", onMoveMouse);
+    document.addEventListener("scroll", onUpdateImagePosition);
 
-    const showCurrentCursor = () => {
-      const cursor = document.querySelector<HTMLDivElement>(".custom-cursor");
-      cursor!.style.display = "block";
-    };
-
-    if (!isMobile) {
-      document.addEventListener("mousemove", onMoveMouse);
-      document.addEventListener("scroll", onUpdateImagePosition);
-      container?.addEventListener("mouseenter", hideCurrentCursor);
-      container?.addEventListener("mouseleave", showCurrentCursor);
-    }
     return () => {
       document.removeEventListener("mousemove", onMoveMouse);
       document.removeEventListener("scroll", onUpdateImagePosition);
-      container?.removeEventListener("mouseenter", hideCurrentCursor);
-      container?.removeEventListener("mouseleave", showCurrentCursor);
     };
   }, []);
 
-  const backgroundUrl = {
-    backgroundImage: `url(${src})`,
-  };
-
-  const onMouseLeave = () => {
+  const onMouseOut = () => {
     setCircleVisible(false);
+    document.querySelector<HTMLDivElement>(".custom-cursor")!.style.display =
+      "block";
   };
 
-  const onMouseEnter = () => {
+  const onMouseOver = () => {
     setCircleVisible(true);
+    document.querySelector<HTMLDivElement>(".custom-cursor")!.style.display =
+      "none";
   };
 
   return (
     <div
+      ref={backgroundRef}
       className="iterative-background"
-      style={backgroundUrl}
-      onMouseLeave={onMouseLeave}
-      onMouseEnter={onMouseEnter}
+      style={{ backgroundImage: `url(${src})` }}
+      onMouseOut={onMouseOut}
+      onMouseOver={onMouseOver}
     >
       {!isMobile && (
         <div className="iterative-mouse">
-          {Array(15)
-            .fill(1)
-            .map((_, index) => (
-              <div
-                key={index}
-                className={`iterative-mouse__circle iterative-mouse__circle--${index}`}
-                style={{
-                  ...backgroundUrl,
-                }}
-              />
-            ))}
+          {Array.from({ length: 15 }).map((_, index) => (
+            <div
+              key={index}
+              className={`iterative-mouse__circle iterative-mouse__circle--${index}`}
+              ref={(el) => {
+                if (el) circlesRef.current[index] = el;
+              }}
+              style={{
+                backgroundImage: `url(${src})`,
+              }}
+            />
+          ))}
         </div>
       )}
       {children}
