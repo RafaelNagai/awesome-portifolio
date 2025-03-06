@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import "./contact-page.scss";
 import { ContactButton } from "./components/contact-button/contact-button";
 import { ContactContent } from "./components/contact-content/contact-content";
-import { directionFade, FadeInOut } from "../../../core/components/fade/fade";
 
 export const ContactPage: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,9 +27,7 @@ export const ContactPage: React.FC = () => {
   return (
     <div ref={ref} className="contact">
       <ContactButton isExpanded={isExpanded} />
-      <FadeInOut direction={directionFade.down}>
-        <ContactContent />
-      </FadeInOut>
+      <ContactContent />
     </div>
   );
 };
