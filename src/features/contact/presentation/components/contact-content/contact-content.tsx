@@ -19,21 +19,33 @@ export const ContactContent: React.FC = () => {
             target="_blank"
             href={SocialMedia.github}
           >
-            <img className="contact-content__icon" src={githubIcon} />
+            <img
+              className="contact-content__icon"
+              src={githubIcon}
+              data-hover={true}
+            />
           </a>
           <a
             className="contact-content__icon"
             target="_blank"
             href={SocialMedia.linkedin}
           >
-            <img className="contact-content__icon" src={linkedinIcon} />
+            <img
+              className="contact-content__icon"
+              src={linkedinIcon}
+              data-hover={true}
+            />
           </a>
           <a
             className="contact-content__icon"
             target="_blank"
             href={SocialMedia.youtube}
           >
-            <img className="contact-content__icon" src={pubdevIcon} />
+            <img
+              className="contact-content__icon"
+              src={pubdevIcon}
+              data-hover={true}
+            />
           </a>
         </div>
       </div>

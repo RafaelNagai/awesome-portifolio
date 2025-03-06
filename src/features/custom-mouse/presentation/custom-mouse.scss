@@ -1,0 +1,43 @@
+button,
+a,
+body,
+.button {
+  cursor: none;
+}
+
+$size-cursor: 20px;
+
+.custom-cursor {
+  position: fixed;
+  width: $size-cursor;
+  height: $size-cursor;
+  pointer-events: none;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  transition: transform 0.05s linear, width 0.2s ease-in-out,
+    height 0.2s ease-in-out; /* Smooth movement */
+  will-change: transform, width, height;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: black;
+    outline: 0px solid black;
+    outline-offset: 0px;
+  }
+}
+
+.custom-cursor.hover {
+  width: calc($size-cursor * 3);
+  height: calc($size-cursor * 3);
+  &::before {
+    background-color: rgba(0, 0, 0, 0.39);
+    mix-blend-mode: normal;
+  }
+}

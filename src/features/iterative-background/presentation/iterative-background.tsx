@@ -71,13 +71,27 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
       });
     };
 
+    const hideCurrentCursor = () => {
+      const cursor = document.querySelector<HTMLDivElement>(".custom-cursor");
+      cursor!.style.display = "none";
+    };
+
+    const showCurrentCursor = () => {
+      const cursor = document.querySelector<HTMLDivElement>(".custom-cursor");
+      cursor!.style.display = "block";
+    };
+
     if (!isMobile) {
       document.addEventListener("mousemove", onMoveMouse);
       document.addEventListener("scroll", onUpdateImagePosition);
+      container?.addEventListener("mouseenter", hideCurrentCursor);
+      container?.addEventListener("mouseleave", showCurrentCursor);
     }
     return () => {
       document.removeEventListener("mousemove", onMoveMouse);
       document.removeEventListener("scroll", onUpdateImagePosition);
+      container?.removeEventListener("mouseenter", hideCurrentCursor);
+      container?.removeEventListener("mouseleave", showCurrentCursor);
     };
   }, []);
 
