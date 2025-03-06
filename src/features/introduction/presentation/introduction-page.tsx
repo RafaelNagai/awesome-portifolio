@@ -1,6 +1,6 @@
 import React from "react";
 import "./introduction-page.scss";
-import { IterativeBackground } from "../../iterative-background/presentation/iterative-background";
+import { IterativeBackground } from "./components/iterative-background";
 import icon from "../../../assets/rafael-background.png";
 import { useTranslation } from "react-i18next";
 import { AllLanguageButton } from "../../../core/internationalization/components/all-language-button";
