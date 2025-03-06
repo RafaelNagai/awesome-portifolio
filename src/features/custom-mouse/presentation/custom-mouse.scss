@@ -5,7 +5,7 @@ body,
   cursor: none;
 }
 
-$size-cursor: 20px;
+$size-cursor: 10px;
 
 .custom-cursor {
   position: fixed;
@@ -28,8 +28,6 @@ $size-cursor: 20px;
     height: 100%;
     border-radius: 50%;
     background-color: black;
-    outline: 0px solid black;
-    outline-offset: 0px;
   }
 }
 

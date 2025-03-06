@@ -17,6 +17,8 @@
 
   &__container {
     display: flex;
+    position: relative;
+    overflow-y: hidden;
     @include responsive-property(align-items, center, center, end, end, end);
     @include responsive-property(
       flex-direction,
@@ -26,7 +28,7 @@
       row,
       row
     );
-    @include responsive-property(width, 100%, 100%, 90vw, 70vw, 70vw);
+    @include responsive-property(padding, 0, 0, 0 1rem, 0 5rem, 0 5rem);
   }
 
   &__content {
