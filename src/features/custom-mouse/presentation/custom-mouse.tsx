@@ -16,14 +16,16 @@ export const CustomCursor: React.FC = () => {
       const target = (e.target as HTMLElement).closest<HTMLElement>(
         "[data-hover]"
       );
-      if (target && target.dataset.hover) cursor.classList.add("hover");
+      if (target && target.dataset.hover === "true")
+        cursor.classList.add("hover");
     };
 
     const onMouseOut = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest<HTMLElement>(
         "[data-hover]"
       );
-      if (target && target.dataset.hover) cursor.classList.remove("hover");
+      if (target && target.dataset.hover === "true")
+        cursor.classList.remove("hover");
     };
 
     document.addEventListener("mousemove", onMouseMove);
