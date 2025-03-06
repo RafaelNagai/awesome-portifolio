@@ -13,16 +13,18 @@ export const IntroductionPage: React.FC = () => {
   const isMobile = useIsMobile();
 
   return (
-    <IterativeBackground src={icon}>
-      <div className="introduction">
-        <AllLanguageButton />
-        <div className="introduction__content">
-          {isMobile && (
-            <img className="introduction__profile-image" src={profile} />
-          )}
-          <h1 className="introduction__title">Impact phrase UAU</h1>
+    <section>
+      <IterativeBackground src={icon}>
+        <div className="introduction">
+          <AllLanguageButton />
+          <div className="introduction__content">
+            {isMobile && (
+              <img className="introduction__profile-image" src={profile} />
+            )}
+            <h1 className="introduction__title">Impact phrase UAU</h1>
+          </div>
         </div>
-      </div>
-    </IterativeBackground>
+      </IterativeBackground>
+    </section>
   );
 };

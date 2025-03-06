@@ -73,7 +73,7 @@ export const ExperiencePage: React.FC = () => {
   );
 
   return (
-    <>
+    <section>
       <div className="experience">
         <BaseTimeline />
         <TimelineBranch className="experience__item">
@@ -94,6 +94,6 @@ export const ExperiencePage: React.FC = () => {
           <FadeInOut direction={directionFade.left}>{hobbies}</FadeInOut>
         </TimelineBranch>
       </div>
-    </>
+    </section>
   );
 };

@@ -25,9 +25,9 @@ export const ContactPage: React.FC = () => {
   }, []);
 
   return (
-    <div ref={ref} className="contact">
+    <section ref={ref} className="contact">
       <ContactButton isExpanded={isExpanded} />
       <ContactContent />
-    </div>
+    </section>
   );
 };
