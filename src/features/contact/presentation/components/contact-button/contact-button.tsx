@@ -23,10 +23,11 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
 
   return (
     <div
-      className={`contact-button ${
+      className={`contact-button button ${
         isExpanded ? "contact-button--expanded" : "contact-button--contracted"
       }`}
       onClick={onTap}
+      data-hover={isExpanded ? false : true}
     >
       {isOpened ? (
         <FontAwesomeIcon
