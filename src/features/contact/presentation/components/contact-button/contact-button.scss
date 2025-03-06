@@ -6,9 +6,9 @@
   background-color: map.get($colors, secondary, darker);
   border-radius: 5rem;
   border: none;
-  position: absolute;
+  position: fixed;
   right: 1rem;
-  top: 0;
+  bottom: 10px;
   animation: expandAnimationBack 0.4s ease-in-out;
   z-index: -1;
   font-size: 1.3rem;
@@ -19,6 +19,8 @@
   border: 1px solid white;
 
   &--expanded {
+    position: absolute;
+    top: 0;
     animation: expandAnimation 0.6s ease-in-out forwards;
     cursor: auto;
     border: none;
