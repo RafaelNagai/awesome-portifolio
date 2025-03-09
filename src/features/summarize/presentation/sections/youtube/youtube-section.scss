@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "../../../../../core/sass/responsive.scss" as *;
+@use "../../../../../core/sass/color.scss" as *;
+
+.youtube-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  @include responsive-property(
+    padding,
+    0 1.5rem,
+    0 1.5rem,
+    0 1rem,
+    0 1rem,
+    0 1rem
+  );
+
+  &__skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__video {
+    border-radius: 1rem;
+    border: 4px solid map.get($colors, primary, main);
+    outline: 2px solid map.get($colors, primary, main);
+    outline-offset: 2px;
+    width: 100%;
+  }
+}
