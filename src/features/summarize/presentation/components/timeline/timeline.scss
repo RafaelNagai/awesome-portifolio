@@ -68,7 +68,7 @@ $timeline-stroke: 10px;
   }
 }
 
-.experience {
+.summarize {
   &__item:nth-of-type(even) {
     &.timeline {
       @include responsive-property(

@@ -2,11 +2,9 @@ import React from "react";
 import { TimelineItem } from "./components/timeline/timeline-item/timeline-item";
 import "./experience-page.scss";
 import { BaseTimeline, TimelineBranch } from "./components/timeline/timeline";
-import { Logo1Float } from "./components/logos/logo1-float";
 import { useTranslation } from "react-i18next";
-import { YoutubeFloat } from "./components/youtube/youtube-float";
-import { Logo2Float } from "./components/logos/logo2-float";
 import { directionFade, FadeInOut } from "../../../core/components/fade/fade";
+import { YoutubeSection } from "./sections/youtube/youtube-section";
 
 export const ExperiencePage: React.FC = () => {
   const { t } = useTranslation();
@@ -26,14 +24,6 @@ export const ExperiencePage: React.FC = () => {
         t("experience.job.skills.scrum"),
         t("experience.job.skills.kanban"),
       ]}
-    />
-  );
-
-  const youtubeChannel = (
-    <TimelineItem
-      title={t("experience.youtube.title")}
-      description={t("experience.youtube.description")}
-      options={[t("experience.youtube.skills.pubdev")]}
     />
   );
 
@@ -74,23 +64,23 @@ export const ExperiencePage: React.FC = () => {
 
   return (
     <section>
-      <div className="experience">
+      <div className="summarize">
         <BaseTimeline />
-        <TimelineBranch className="experience__item">
+        <TimelineBranch className="summarize__item">
           <FadeInOut direction={directionFade.left}>{experienceJob}</FadeInOut>
         </TimelineBranch>
-        <TimelineBranch className="experience__item">
+        <TimelineBranch className="summarize__item">
           <FadeInOut direction={directionFade.right}>
-            {youtubeChannel}
+            <YoutubeSection />
           </FadeInOut>
         </TimelineBranch>
-        <TimelineBranch className="experience__item">
+        <TimelineBranch className="summarize__item">
           <FadeInOut direction={directionFade.left}>{education}</FadeInOut>
         </TimelineBranch>
-        <TimelineBranch className="experience__item">
+        <TimelineBranch className="summarize__item">
           <FadeInOut direction={directionFade.right}>{language}</FadeInOut>
         </TimelineBranch>
-        <TimelineBranch className="experience__item">
+        <TimelineBranch className="summarize__item">
           <FadeInOut direction={directionFade.left}>{hobbies}</FadeInOut>
         </TimelineBranch>
       </div>
