@@ -7,7 +7,11 @@ export const YoutubeSection: React.FC = () => {
 
   return (
     <div className="youtube-section">
-      <h2>{t("experience.youtube.title")}</h2>
+      <div className="youtube-section__title">
+        <h2>{t("experience.youtube.title")}</h2>
+        <img src="/src/assets/icons/youtube-icon.png" />
+      </div>
+
       <p>{t("experience.youtube.description")}</p>
       <iframe
         className="youtube-section__video"

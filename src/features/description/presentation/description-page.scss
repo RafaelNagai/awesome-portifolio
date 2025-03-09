@@ -18,7 +18,7 @@
   &__container {
     display: flex;
     position: relative;
-    overflow-y: hidden;
+    overflow-x: hidden;
     @include responsive-property(align-items, center, center, end, end, end);
     @include responsive-property(
       flex-direction,
