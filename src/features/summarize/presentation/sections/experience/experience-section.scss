@@ -1,0 +1,102 @@
+@use "sass:map";
+@use "../../../../../core/sass/responsive.scss" as *;
+@use "../../../../../core/sass/color.scss" as *;
+
+.experience-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  @include responsive-property(
+    padding,
+    0 1.5rem,
+    0 1.5rem,
+    0 1rem,
+    0 1rem,
+    0 1rem
+  );
+
+  &__title {
+    height: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: end;
+
+    & img {
+      object-fit: contain;
+      object-position: center;
+      height: 100%;
+    }
+  }
+
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    @include responsive-property(flex-direction, column, row, row, row, row);
+  }
+
+  &__skill {
+    text-align: center;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    background-color: map.get($colors, primary, main);
+    outline: 2px solid map.get($colors, primary, main);
+    outline-offset: 2px;
+    transition: all 0.2s ease-in-out;
+    @include responsive-property(min-width, 100%, 40%, 40%, 20%, 20%);
+
+    &:hover {
+      transform: scale(1.1);
+      letter-spacing: 2px;
+      box-shadow: 0px 0px 10px map.get($colors, primary, main);
+    }
+  }
+
+  &__area {
+    &:hover > .experience-section__title-area {
+      color: map.get($colors, secondary, lighter);
+      letter-spacing: 0px;
+      &::before {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &__title-area {
+    margin-top: 10px;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    transition: color 300ms ease-in-out, letter-spacing 150ms ease-in;
+    letter-spacing: 15px;
+    color: rgba(128, 128, 128, 0.4);
+
+    &::after {
+      content: "";
+      background-color: map.get($colors, background);
+      position: absolute;
+      top: calc(50% - 5px);
+      left: calc(50% - 50px);
+      width: 100px;
+      height: 20px;
+      z-index: -1;
+    }
+
+    &::before {
+      content: "";
+      background-color: map.get($colors, secondary, lighter);
+      position: absolute;
+      top: calc(50% - 2px);
+      left: 50%;
+      right: 50%;
+      height: 5px;
+      border-radius: 10px 10px;
+      z-index: -2;
+      transition: left 150ms ease-in, right 150ms ease-in;
+    }
+  }
+}

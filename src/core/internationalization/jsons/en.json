@@ -4,18 +4,43 @@
   },
   "experience": {
     "job": {
-      "title": "Job Experience",
-      "description": "I have 8+ years of experience in web and mobile development, specializing in Flutter. I’ve worked with ArcTouch, Camino Education, Yamaha Group, Safra Bank, and Liberty Mutual, using technologies like Kotlin, Swift, C#, and JavaScript.",
-      "skills": {
-        "flutter": "Flutter",
-        "android": "Android",
-        "ios": "iOS",
-        "csharp": "C#",
-        "react": "React",
-        "sass": "Sass",
-        "agile": "Agile",
-        "scrum": "Scrum",
-        "kanban": "Kanban"
+      "title": "Experiences",
+      "description": "I have 8+ years of experience in web and mobile development, specializing in Flutter. I’ve worked Mobile, Front-End and Back-End.",
+      "area": {
+        "mobile": {
+          "title": "Mobile",
+          "skills": {
+            "flutter": "Flutter",
+            "xamarin": "Xamarin",
+            "kotlin": "Kotlin",
+            "swift": "Swift"
+          }
+        },
+        "frontend": {
+          "title": "Front-End",
+          "skills": {
+            "react": "React",
+            "typescript": "Typescript",
+            "javascript": "Javascript",
+            "sass": "Sass",
+            "tailwindcss": "TailwindCSS"
+          }
+        },
+        "backend": {
+          "title": "Back-End",
+          "skills": {
+            "csharp": "C#",
+            "dotNetCore": ".Net Core"
+          }
+        },
+        "others": {
+          "title": "Others",
+          "skills": {
+            "firebase": "Firebase",
+            "sqlServer": "SQL Server",
+            "GraphQL": "GraphQL"
+          }
+        }
       }
     },
     "youtube": {
@@ -35,7 +60,7 @@
       }
     },
     "language": {
-      "title": "Language",
+      "title": "Languages",
       "description": "I am proficient in both English and Portuguese. I enhanced my language skills through exchange programs in Ireland and Canada, which helped me gain a deeper understanding of different cultures and improve my communication abilities.",
       "skills": {
         "english": "English",
@@ -43,7 +68,7 @@
       }
     },
     "hobbie": {
-      "title": "hobbie",
+      "title": "hobbies",
       "description": "In my free time, I enjoy playing games, drawing, and serving as a Game Master for tabletop RPGs (TRPGs). These hobbies allow me to be creative, think strategically, and engage in storytelling with others.",
       "skills": {
         "lol": "League of Legends",
