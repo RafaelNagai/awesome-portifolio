@@ -21,6 +21,22 @@
     gap: 0.5rem;
     align-items: center;
     justify-content: end;
+    @include responsive-property(
+      justify-content,
+      left,
+      left,
+      right,
+      right,
+      right
+    );
+    @include responsive-property(
+      flex-direction,
+      row-reverse,
+      row-reverse,
+      row,
+      row,
+      row
+    );
 
     & img {
       object-fit: contain;
