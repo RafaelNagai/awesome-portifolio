@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./youtube-section.scss";
+import youtubeIcon from "../../../../../assets/icons/youtube-icon.png";
 
 export const YoutubeSection: React.FC = () => {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ export const YoutubeSection: React.FC = () => {
     <div className="youtube-section">
       <div className="youtube-section__title">
         <h2>{t("experience.youtube.title")}</h2>
-        <img src="/src/assets/icons/youtube-icon.png" />
+        <img src={youtubeIcon} />
       </div>
 
       <p>{t("experience.youtube.description")}</p>

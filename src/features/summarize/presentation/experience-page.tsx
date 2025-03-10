@@ -5,27 +5,10 @@ import { BaseTimeline, TimelineBranch } from "./components/timeline/timeline";
 import { useTranslation } from "react-i18next";
 import { directionFade, FadeInOut } from "../../../core/components/fade/fade";
 import { YoutubeSection } from "./sections/youtube/youtube-section";
+import { ExperienceSection } from "./sections/experience/experience-section";
 
 export const ExperiencePage: React.FC = () => {
   const { t } = useTranslation();
-
-  const experienceJob = (
-    <TimelineItem
-      title={t("experience.job.title")}
-      description={t("experience.job.description")}
-      options={[
-        t("experience.job.skills.flutter"),
-        t("experience.job.skills.android"),
-        t("experience.job.skills.ios"),
-        t("experience.job.skills.csharp"),
-        t("experience.job.skills.react"),
-        t("experience.job.skills.sass"),
-        t("experience.job.skills.agile"),
-        t("experience.job.skills.scrum"),
-        t("experience.job.skills.kanban"),
-      ]}
-    />
-  );
 
   const education = (
     <TimelineItem
@@ -67,7 +50,9 @@ export const ExperiencePage: React.FC = () => {
       <div className="summarize">
         <BaseTimeline />
         <TimelineBranch className="summarize__item">
-          <FadeInOut direction={directionFade.left}>{experienceJob}</FadeInOut>
+          <FadeInOut direction={directionFade.left}>
+            <ExperienceSection />
+          </FadeInOut>
         </TimelineBranch>
         <TimelineBranch className="summarize__item">
           <FadeInOut direction={directionFade.right}>
