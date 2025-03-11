@@ -7,10 +7,10 @@ export const YoutubeSection: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="youtube-section">
-      <div className="youtube-section__title">
+    <div className="youtube-section summarize-section">
+      <div className="summarize-section__title summarize-section__title--right">
+        <img className="summarize-section__image" src={youtubeIcon} />
         <h2>{t("experience.youtube.title")}</h2>
-        <img src={youtubeIcon} />
       </div>
 
       <p>{t("experience.youtube.description")}</p>

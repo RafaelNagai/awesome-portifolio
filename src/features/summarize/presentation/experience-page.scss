@@ -1,6 +1,9 @@
 @use "sass:map";
 @use "../../../core/sass/responsive.scss" as *;
 @use "../../../core/sass/color.scss" as *;
+@use "./sections/section-title";
+
+$default-spacing: 2.5rem;
 
 .summarize {
   display: grid;
@@ -20,9 +23,36 @@
   );
 
   &__item {
+    margin-top: $default-spacing;
     @include responsive-property(width, 90%, 90%, 90%, 70%, 70%);
+
+    &--youtube {
+      @include responsive-property(
+        margin-top,
+        $default-spacing,
+        $default-spacing,
+        16rem,
+        16rem,
+        16rem
+      );
+    }
+
+    &--education {
+      @include responsive-property(
+        margin-top,
+        $default-spacing,
+        $default-spacing,
+        15rem,
+        15rem,
+        15rem
+      );
+    }
+
+    &--spacing {
+      margin-top: 0;
+    }
+
     &:nth-of-type(even) {
-      margin-top: 50px;
       @include responsive-property(
         margin-left,
         10%,
@@ -34,21 +64,20 @@
       @include responsive-property(text-align, start, start, end, end, end);
       @include responsive-property(justify-self, start, start, end, end, end);
     }
-  }
 
-  &__item:nth-of-type(odd) {
-    @include responsive-property(
-      margin-left,
-      10%,
-      10%,
-      inherit,
-      inherit,
-      inherit
-    );
-    @include responsive-property(margin-top, 1rem, 1rem, 15rem, 15rem, 15rem);
-  }
+    &:nth-of-type(odd) {
+      @include responsive-property(
+        margin-left,
+        10%,
+        10%,
+        inherit,
+        inherit,
+        inherit
+      );
+    }
 
-  &__item:last-child {
-    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 8rem;
+    }
   }
 }
