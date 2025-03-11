@@ -62,7 +62,7 @@
     outline: 2px solid map.get($colors, primary, main);
     outline-offset: 2px;
     transition: all 0.2s ease-in-out;
-    @include responsive-property(min-width, 100%, 40%, 40%, 20%, 20%);
+    @include responsive-property(min-width, 100%, 40%, 40%, 40%, 40%);
 
     &:hover {
       transform: scale(1.1);
