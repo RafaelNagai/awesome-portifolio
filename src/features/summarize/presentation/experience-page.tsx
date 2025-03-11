@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { directionFade, FadeInOut } from "../../../core/components/fade/fade";
 import { YoutubeSection } from "./sections/youtube/youtube-section";
 import { ExperienceSection } from "./sections/experience/experience-section";
+import { EducationSection } from "./sections/education/education-section";
 
 export const ExperiencePage: React.FC = () => {
   const { t } = useTranslation();
@@ -60,7 +61,9 @@ export const ExperiencePage: React.FC = () => {
           </FadeInOut>
         </TimelineBranch>
         <TimelineBranch className="summarize__item">
-          <FadeInOut direction={directionFade.left}>{education}</FadeInOut>
+          <FadeInOut direction={directionFade.left}>
+            <EducationSection />
+          </FadeInOut>
         </TimelineBranch>
         <TimelineBranch className="summarize__item">
           <FadeInOut direction={directionFade.right}>{language}</FadeInOut>
