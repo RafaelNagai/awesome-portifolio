@@ -1,5 +1,5 @@
 import React from "react";
-import "./experience-page.scss";
+import "./summarize-page.scss";
 import { BaseTimeline, TimelineBranch } from "./components/timeline/timeline";
 import { directionFade, FadeInOut } from "../../../core/components/fade/fade";
 import { YoutubeSection } from "./sections/youtube/youtube-section";
@@ -8,7 +8,7 @@ import { EducationSection } from "./sections/education/education-section";
 import { LanguageSection } from "./sections/language/language-section";
 import { HobbieSection } from "./sections/hobbie/hobbie-section";
 
-export const ExperiencePage: React.FC = () => {
+export const SummarizePage: React.FC = () => {
   return (
     <section>
       <div className="summarize">
