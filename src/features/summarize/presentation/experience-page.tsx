@@ -18,12 +18,12 @@ export const ExperiencePage: React.FC = () => {
             <ExperienceSection />
           </FadeInOut>
         </TimelineBranch>
-        <TimelineBranch className="summarize__item">
+        <TimelineBranch className="summarize__item summarize__item--youtube">
           <FadeInOut direction={directionFade.right}>
             <YoutubeSection />
           </FadeInOut>
         </TimelineBranch>
-        <TimelineBranch className="summarize__item">
+        <TimelineBranch className="summarize__item summarize__item--education">
           <FadeInOut direction={directionFade.left}>
             <EducationSection />
           </FadeInOut>
@@ -33,8 +33,9 @@ export const ExperiencePage: React.FC = () => {
             <LanguageSection />
           </FadeInOut>
         </TimelineBranch>
+        <div className="summarize__item summarize__item--spacing"></div>
         <TimelineBranch className="summarize__item">
-          <FadeInOut direction={directionFade.left}>
+          <FadeInOut direction={directionFade.right}>
             <HobbieSection />
           </FadeInOut>
         </TimelineBranch>

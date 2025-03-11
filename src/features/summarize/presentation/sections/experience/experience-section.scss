@@ -3,47 +3,6 @@
 @use "../../../../../core/sass/color.scss" as *;
 
 .experience-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  @include responsive-property(
-    padding,
-    0 1.5rem,
-    0 1.5rem,
-    0 1rem,
-    0 1rem,
-    0 1rem
-  );
-
-  &__title {
-    height: 2rem;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    @include responsive-property(
-      justify-content,
-      left,
-      left,
-      right,
-      right,
-      right
-    );
-    @include responsive-property(
-      flex-direction,
-      row-reverse,
-      row-reverse,
-      row,
-      row,
-      row
-    );
-
-    & img {
-      object-fit: contain;
-      object-position: center;
-      height: 100%;
-    }
-  }
-
   &__skills {
     display: flex;
     flex-wrap: wrap;

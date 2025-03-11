@@ -7,9 +7,9 @@ export const ExperienceSection: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="experience-section">
-      <div className="experience-section__title">
-        <img src={experienceIcon} />
+    <div className="experience-section summarize-section">
+      <div className="summarize-section__title">
+        <img className="summarize-section__image" src={experienceIcon} />
         <h2>{t("experience.job.title")}</h2>
       </div>
       <p>{t("experience.job.description")}</p>

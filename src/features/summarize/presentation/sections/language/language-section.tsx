@@ -7,10 +7,10 @@ export const LanguageSection: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="language-section">
-      <div className="language-section__title">
+    <div className="language-section summarize-section">
+      <div className="summarize-section__title summarize-section__title--right">
+        <img className="summarize-section__image" src={icon} />
         <h2>{t("experience.language.title")}</h2>
-        <img src={icon} />
       </div>
       <p>{t("experience.language.description")}</p>
 
