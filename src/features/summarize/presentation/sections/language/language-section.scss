@@ -1,0 +1,59 @@
+@use "sass:map";
+@use "../../../../../core/sass/responsive.scss" as *;
+@use "../../../../../core/sass/color.scss" as *;
+
+.language-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  @include responsive-property(
+    padding,
+    0 1.5rem,
+    0 1.5rem,
+    0 1rem,
+    0 1rem,
+    0 1rem
+  );
+
+  &__title {
+    height: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    & img {
+      object-fit: contain;
+      object-position: center;
+      width: 35px;
+    }
+  }
+
+  &__languages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__language {
+    flex: 1;
+    font-size: 1.3rem;
+    color: map.get($colors, secondary, main);
+    transition: letter-spacing 300ms ease-in-out, font-size 300ms ease-in-out;
+
+    &:first-child {
+      text-align: right;
+    }
+
+    &:hover {
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+    }
+  }
+
+  &__divider {
+    height: 40px;
+    width: 3px;
+    background-color: map.get($colors, secondary, main);
+  }
+}

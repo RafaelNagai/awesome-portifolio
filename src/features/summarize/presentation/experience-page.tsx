@@ -7,6 +7,7 @@ import { directionFade, FadeInOut } from "../../../core/components/fade/fade";
 import { YoutubeSection } from "./sections/youtube/youtube-section";
 import { ExperienceSection } from "./sections/experience/experience-section";
 import { EducationSection } from "./sections/education/education-section";
+import { LanguageSection } from "./sections/language/language-section";
 
 export const ExperiencePage: React.FC = () => {
   const { t } = useTranslation();
@@ -66,7 +67,9 @@ export const ExperiencePage: React.FC = () => {
           </FadeInOut>
         </TimelineBranch>
         <TimelineBranch className="summarize__item">
-          <FadeInOut direction={directionFade.right}>{language}</FadeInOut>
+          <FadeInOut direction={directionFade.right}>
+            <LanguageSection />
+          </FadeInOut>
         </TimelineBranch>
         <TimelineBranch className="summarize__item">
           <FadeInOut direction={directionFade.left}>{hobbies}</FadeInOut>
