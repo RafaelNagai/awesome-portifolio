@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./language-section.scss";
-import educationIcon from "../../../../../assets/icons/education-icon.png";
+import icon from "../../../../../assets/icons/language-icon.png";
 
 export const LanguageSection: React.FC = () => {
   const { t } = useTranslation();
@@ -10,7 +10,7 @@ export const LanguageSection: React.FC = () => {
     <div className="language-section">
       <div className="language-section__title">
         <h2>{t("experience.language.title")}</h2>
-        <img src={educationIcon} />
+        <img src={icon} />
       </div>
       <p>{t("experience.language.description")}</p>
 
