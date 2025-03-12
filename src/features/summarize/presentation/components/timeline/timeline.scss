@@ -69,6 +69,16 @@ $timeline-stroke: 10px;
 }
 
 .summarize {
+  &__item {
+    &:hover {
+      & .timeline__branch {
+        &::after {
+          animation: CiclePulseAnimation 2s ease-in-out infinite;
+        }
+      }
+    }
+  }
+
   &__item:nth-of-type(even) {
     &.timeline {
       @include responsive-property(
@@ -107,5 +117,20 @@ $timeline-stroke: 10px;
         }
       }
     }
+  }
+}
+
+@keyframes CiclePulseAnimation {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px white;
+  }
+  20% {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 4px white;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px white;
   }
 }
