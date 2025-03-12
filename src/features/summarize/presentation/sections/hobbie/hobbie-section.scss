@@ -31,4 +31,54 @@
       width: 35px;
     }
   }
+
+  $card-size: 100px;
+  @mixin card-animation($index, $y) {
+    transform: perspective(300px) rotate3d(1, 0, 0, -35deg)
+      translateZ(calc($index * 25px)) translateY($y);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: calc($card-size * 1.5);
+    position: relative;
+  }
+
+  &__bookcover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: map.get($colors, secondary, darker);
+    color: white;
+    width: $card-size;
+    height: $card-size;
+    position: absolute;
+    top: calc(50% - $card-size/2);
+    left: calc(50% - $card-size/2);
+  }
+
+  &__hobbie {
+    width: $card-size;
+    height: $card-size;
+    position: absolute;
+    top: calc(50% - $card-size/2);
+    left: calc(50% - $card-size/2);
+    transition: transform 400ms ease-out;
+
+    @for $i from 1 through 4 {
+      &--#{$i} {
+        @include card-animation($i, 0px);
+        z-index: $i;
+
+        @if $i != 4 {
+          &:hover {
+            @include card-animation($i, -70px);
+          }
+        }
+      }
+    }
+  }
 }
