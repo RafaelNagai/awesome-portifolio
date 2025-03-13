@@ -1,8 +1,10 @@
 @use "sass:map";
 @use "../../../../../core/sass/color.scss" as *;
+@use "../../../../../core/sass/responsive.scss" as *;
+
+$animationTime: 2s;
 
 .phrase {
-  font-size: 5rem;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -14,7 +16,15 @@
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    letter-spacing: -10px;
+    @include responsive-property(font-size, 3rem, 3rem, 4rem, 4rem, 5rem);
+    @include responsive-property(
+      letter-spacing,
+      -0.2rem,
+      -0.2rem,
+      -0.4rem,
+      -0.4rem,
+      -0.5rem
+    );
   }
 
   &__cursor-container {
@@ -23,6 +33,7 @@
     height: 100px;
     align-content: end;
     overflow: hidden;
+    @include responsive-property(width, 200px, 200px, 250px, 250px, 300px);
   }
 
   &__cursor {
@@ -33,26 +44,32 @@
     animation: blinkAnimation 1s ease infinite;
 
     &--animate {
-      animation: cursorExpandAnimation 2s ease forwards;
+      animation: cursorExpandAnimation $animationTime ease forwards;
     }
   }
 
   &__highlighted-text {
-    display: none;
     position: absolute;
+    opacity: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 7rem;
     font-family: "Bebas Neue", serif;
     font-weight: 400;
     font-style: normal;
-    line-height: 5rem;
+    @include responsive-property(font-size, 5rem, 5rem, 6rem, 6rem, 7rem);
+    @include responsive-property(
+      line-height,
+      3.8rem,
+      3.8rem,
+      4.4rem,
+      4.4rem,
+      5rem
+    );
 
     &--animate {
-      display: block;
-      animation: highlightedTextAnimation 2s ease;
+      animation: highlightedTextAnimation $animationTime ease forwards;
     }
   }
 }
@@ -77,10 +94,10 @@
     width: 50px;
   }
   50% {
-    width: 300px;
+    width: 100%;
   }
   100% {
-    width: 300px;
+    width: 100%;
   }
 }
 
@@ -89,9 +106,11 @@
     transform: translateY(100%);
   }
   50% {
+    opacity: 0;
     transform: translateY(100%);
   }
   100% {
+    opacity: 1;
     transform: translateY(0%);
   }
 }
