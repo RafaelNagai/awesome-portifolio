@@ -7,7 +7,7 @@ export const IterativeTitle: React.FC = () => {
   const [secondLine, setSecondLine] = useState(false);
 
   return (
-    <div className="phrase">
+    <div className="phrase" data-invert={true}>
       <PhraseCursor
         phrase={firstTitle}
         highlightedText="passion"
