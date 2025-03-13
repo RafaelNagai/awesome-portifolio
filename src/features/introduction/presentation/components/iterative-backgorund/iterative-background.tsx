@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./iterative-background.scss";
-import useIsMobile from "../../../../core/components/mobile/is-mobile";
+import useIsMobile from "../../../../../core/components/mobile/is-mobile";
 
 type IterativeBackgroundProps = {
   src: string;

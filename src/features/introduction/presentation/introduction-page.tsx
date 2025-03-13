@@ -1,11 +1,12 @@
 import React from "react";
 import "./introduction-page.scss";
-import { IterativeBackground } from "./components/iterative-background";
+import { IterativeBackground } from "./components/iterative-backgorund/iterative-background";
 import icon from "../../../assets/rafael-background.png";
 import { useTranslation } from "react-i18next";
 import { AllLanguageButton } from "../../../core/internationalization/components/all-language-button";
 import profile from "../../../assets/rafael-background.png";
 import useIsMobile from "../../../core/components/mobile/is-mobile";
+import { IterativeTitle } from "./components/iterative-title/iterative-title";
 
 export const IntroductionPage: React.FC = () => {
   const { t } = useTranslation();
@@ -21,7 +22,7 @@ export const IntroductionPage: React.FC = () => {
             {isMobile && (
               <img className="introduction__profile-image" src={profile} />
             )}
-            <h1 className="introduction__title">Impact phrase UAU</h1>
+            <IterativeTitle />
           </div>
         </div>
       </IterativeBackground>
