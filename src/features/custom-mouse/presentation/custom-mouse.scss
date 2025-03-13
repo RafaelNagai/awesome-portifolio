@@ -16,8 +16,9 @@ $size-cursor: 10px;
   left: 0;
   top: 0;
   transition: transform 0.05s linear, width 0.2s ease-in-out,
-    height 0.2s ease-in-out; /* Smooth movement */
+    height 0.2s ease-in-out, opacity 0.5s ease-in-out; /* Smooth movement */
   will-change: transform, width, height;
+  opacity: 1;
 
   &::before {
     content: "";
@@ -38,4 +39,19 @@ $size-cursor: 10px;
     background-color: rgba(0, 0, 0, 0.39);
     mix-blend-mode: normal;
   }
+}
+
+.custom-cursor.invert {
+  transition: transform 0.05s linear, width 1s ease-in-out,
+    height 1s ease-in-out;
+  width: 30vw;
+  height: 30vw;
+  mix-blend-mode: difference;
+  &::before {
+    background-color: white;
+  }
+}
+
+.custom-cursor.hidden {
+  opacity: 0;
 }

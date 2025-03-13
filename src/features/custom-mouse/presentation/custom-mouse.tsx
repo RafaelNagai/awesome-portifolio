@@ -14,18 +14,22 @@ export const CustomCursor: React.FC = () => {
 
     const onMouseOver = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest<HTMLElement>(
-        "[data-hover]"
+        "[data-hover], [data-invert]"
       );
       if (target && target.dataset.hover === "true")
         cursor.classList.add("hover");
+      if (target && target.dataset.invert === "true")
+        cursor.classList.add("invert");
     };
 
     const onMouseOut = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest<HTMLElement>(
-        "[data-hover]"
+        "[data-hover], [data-invert]"
       );
       if (target && target.dataset.hover === "true")
         cursor.classList.remove("hover");
+      if (target && target.dataset.invert === "true")
+        cursor.classList.remove("invert");
     };
 
     document.addEventListener("mousemove", onMouseMove);
