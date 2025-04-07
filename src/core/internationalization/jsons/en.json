@@ -1,6 +1,10 @@
 {
   "introduction": {
-    "description": "I am a trusted mobile developer with 8+ years of experience in Flutter and cross-platform development. I started in IT support at WIT Solutions before transitioning to development, working with PhoneGap, JavaScript, and PHP. I contributed to a Xamarin startup and played a key role in Liberty Mutual’s Aliro project using C# MVC 5. In 2018, I specialized in Xamarin Forms, earning certifications and leading an ASP.NET migration. After studying English in Ireland (B2 PET Cambridge), I focused on Flutter, taking Tech Lead roles at Camino Education and ArcTouch, delivering high-quality Android and iOS applications."
+    "description": "I am a trusted mobile developer with 8+ years of experience in Flutter and cross-platform development. I started in IT support at WIT Solutions before transitioning to development, working with PhoneGap, JavaScript, and PHP. I contributed to a Xamarin startup and played a key role in Liberty Mutual’s Aliro project using C# MVC 5. In 2018, I specialized in Xamarin Forms, earning certifications and leading an ASP.NET migration. After studying English in Ireland (B2 PET Cambridge), I focused on Flutter, taking Tech Lead roles at Camino Education and ArcTouch, delivering high-quality Android and iOS applications.",
+    "coding_with": "Coding with ",
+    "passion": "passion",
+    "teaching_with": "Teaching with ",
+    "love": "love"
   },
   "experience": {
     "job": {

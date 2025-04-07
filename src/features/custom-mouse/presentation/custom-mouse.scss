@@ -42,8 +42,8 @@ $size-cursor: 10px;
 }
 
 .custom-cursor.invert {
-  transition: transform 0.05s linear, width 1s ease-in-out,
-    height 1s ease-in-out;
+  transition: transform 0.05s linear, width 0.5s ease-in-out,
+    height 0.5s ease-in-out;
   width: 30vw;
   height: 30vw;
   mix-blend-mode: difference;
