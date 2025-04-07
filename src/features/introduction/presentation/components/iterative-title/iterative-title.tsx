@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./iterative-title.scss";
+import { useTranslation } from "react-i18next";
 
 export const IterativeTitle: React.FC = () => {
-  const firstTitle = "Coding with ";
-  const secondTitle = "Teaching with ";
+  const { t } = useTranslation();
+  const firstTitle = t("introduction.coding_with");
+  const secondTitle = t("introduction.teaching_with");
   const [secondLine, setSecondLine] = useState(false);
 
   return (
     <div className="phrase" data-invert={true}>
       <PhraseCursor
         phrase={firstTitle}
-        highlightedText="passion"
+        highlightedText={t("introduction.passion")}
         textColor="black"
         highlightedColor="white"
         onFinish={() => setSecondLine(true)}
@@ -18,7 +20,7 @@ export const IterativeTitle: React.FC = () => {
       {secondLine && (
         <PhraseCursor
           phrase={secondTitle}
-          highlightedText="love"
+          highlightedText={t("introduction.love")}
           textColor="white"
           highlightedColor="black"
         />
@@ -46,7 +48,7 @@ const PhraseCursor: React.FC<{
       } else {
         setTimeout(() => {
           setAnimate(true);
-        }, 1000);
+        }, 500);
         clearInterval(interval);
         setTimeout(() => {
           onFinish?.call(this);
