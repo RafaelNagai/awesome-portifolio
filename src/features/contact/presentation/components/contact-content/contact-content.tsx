@@ -17,7 +17,9 @@ export const ContactContent: React.FC = () => {
       <FadeInOut direction={directionFade.down}>
         <div className="contact-content__container">
           <h2 className="contact-content__title">Rafael Kenji Sales Nagai</h2>
-          <h4 className="contact-content__subtitle">• Software Engineer •</h4>
+          <h4 className="contact-content__subtitle">
+            • {t("contact.heading")} •
+          </h4>
           <div className="contact-content__social-medias">
             <a
               className="contact-content__icon"

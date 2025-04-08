@@ -15,9 +15,13 @@ export const LanguageSection: React.FC = () => {
       <p>{t("experience.language.description")}</p>
 
       <div className="language-section__languages">
-        <p className="language-section__language">Portuguese</p>
+        <p className="language-section__language">
+          {t("experience.language.skills.english")}
+        </p>
         <div className="language-section__divider"></div>
-        <p className="language-section__language">English</p>
+        <p className="language-section__language">
+          {t("experience.language.skills.portuguese")}
+        </p>
       </div>
     </div>
   );
