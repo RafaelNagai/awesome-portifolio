@@ -18,7 +18,7 @@ export const DescriptionPage = () => {
           direction={directionFade.right}
           className="description__column"
         >
-          <div className="description__content">
+          <div className="description__content" data-invert={true}>
             <h1 className="description__title">RAFAEL NAGAI</h1>
             <p className="description__summary">
               {t("introduction.description")}
