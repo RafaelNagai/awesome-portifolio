@@ -3,13 +3,11 @@ import "./iterative-background.scss";
 import useIsMobile from "../../../../../core/components/mobile/is-mobile";
 
 type IterativeBackgroundProps = {
-  src: string;
   delay?: number;
   children: React.ReactNode;
 };
 
 export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
-  src,
   delay = 10,
   children,
 }) => {
@@ -123,7 +121,6 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
       <div
         ref={backgroundRef}
         className="iterative-background"
-        style={{ backgroundImage: `url(${src})` }}
         onMouseLeave={onMouseOut}
         onMouseEnter={onMouseOver}
       >
@@ -135,9 +132,6 @@ export const IterativeBackground: React.FC<IterativeBackgroundProps> = ({
                 className={`iterative-mouse__circle iterative-mouse__circle--${index}`}
                 ref={(el) => {
                   if (el) circlesRef.current[index] = el;
-                }}
-                style={{
-                  backgroundImage: `url(${src})`,
                 }}
               />
             ))}

@@ -13,7 +13,6 @@ export const ContactPage: React.FC = () => {
         const heightScreen = window.innerHeight;
         const { top } = ref.current.getBoundingClientRect();
         const topScroll = window.scrollY;
-        console.log(topScroll);
         const _isExpanded = top < heightScreen || topScroll < 50;
         setIsExpanded(_isExpanded);
       }

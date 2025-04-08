@@ -23,6 +23,14 @@
   display: flex;
   user-select: none;
   @include image-position();
+  @include responsive-property(
+    background-image,
+    url("/rafael-background_x1.png"),
+    url("/rafael-background_x1.png"),
+    url("/rafael-background_x1.png"),
+    url("/rafael-background_x1.png"),
+    url("/rafael-background_x1.png")
+  );
 
   &::before {
     content: "";
@@ -51,6 +59,26 @@ $size-circle: 30vw;
     background-attachment: fixed;
     transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
     @include image-position();
+    @include responsive-property(
+      background-image,
+      url("/rafael-background_x1.png"),
+      url("/rafael-background_x1.png"),
+      url("/rafael-background_x1.png"),
+      url("/rafael-background_x1.png"),
+      url("/rafael-background_x1.png")
+    );
+
+    &:first-of-type {
+      z-index: 10;
+      @include responsive-property(
+        background-image,
+        url("/rafael-background_x1.png"),
+        url("/rafael-background_x1.png"),
+        url("/rafael-background_x2.png"),
+        url("/rafael-background_x3.png"),
+        url("/rafael-background_x4.png")
+      );
+    }
   }
 
   @for $i from 0 through 15 {
