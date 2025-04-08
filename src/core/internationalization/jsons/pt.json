@@ -1,6 +1,14 @@
 {
+  "contact": {
+    "heading": "Software Engineer",
+    "contact": "Contato"
+  },
   "introduction": {
-    "description": "Sou um desenvolvedor mobile confiável com mais de 8 anos de experiência em Flutter e desenvolvimento cross-platform. Comecei em suporte de TI na WIT Solutions antes de transitar para o desenvolvimento, trabalhando com PhoneGap, JavaScript e PHP. Contribuí para uma startup Xamarin e desempenhei um papel chave no projeto Aliro da Liberty Mutual, utilizando C# MVC 5. Em 2018, especializei-me em Xamarin Forms, obtendo certificações. Após estudar inglês na Irlanda (B2 PET Cambridge), concentrei-me no Flutter, assumindo cargos de Tech Lead na Camino Education e ArcTouch, entregando aplicativos Android e iOS de alta qualidade."
+    "description": "Sou um desenvolvedor mobile confiável com mais de 8 anos de experiência em Flutter e desenvolvimento cross-platform. Comecei em suporte de TI na WIT Solutions antes de transitar para o desenvolvimento, trabalhando com PhoneGap, JavaScript e PHP. Contribuí para uma startup Xamarin e desempenhei um papel chave no projeto Aliro da Liberty Mutual, utilizando C# MVC 5. Em 2018, especializei-me em Xamarin Forms, obtendo certificações. Após estudar inglês na Irlanda (B2 PET Cambridge), concentrei-me no Flutter, assumindo cargos de Tech Lead na Camino Education e ArcTouch, entregando aplicativos Android e iOS de alta qualidade.",
+    "coding_with": "Codando com ",
+    "passion": "paixao",
+    "teaching_with": "Ensinando com ",
+    "love": "amor"
   },
   "experience": {
     "job": {
@@ -28,10 +36,15 @@
     "education": {
       "title": "Educação",
       "description": "Sou formado em Análise e Desenvolvimento de Sistemas e ampliei minha educação estudando desenvolvimento front-end web na Cornerstone. Isso me ajudou a fortalecer minhas habilidades e ampliar minha expertise na área de tecnologia.",
-      "skills": {
-        "software": "Engenheiro de Software",
-        "mobile": "Desenvolvedor Mobile",
-        "web": "Desenvolvedor Web"
+      "option1": {
+        "title": "Analise e Desenvolvimento de Sistema",
+        "from": "Brasil",
+        "period": "Jan 2012 - Jun 2014"
+      },
+      "option2": {
+        "title": "Front-End Web Development",
+        "from": "Canada",
+        "period": "Jan 2025 - Dez 2026"
       }
     },
     "language": {

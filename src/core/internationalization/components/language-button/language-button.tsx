@@ -15,6 +15,7 @@ export const LanguageButton: React.FC<LanguageButtonProps> = ({
 
   const onChangeLanguage = () => {
     i18n.changeLanguage(language);
+    localStorage.setItem("language", language);
   };
 
   const isNotActivated = i18n.language !== language;

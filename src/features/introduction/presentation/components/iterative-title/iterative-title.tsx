@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import "./iterative-title.scss";
 import { useTranslation } from "react-i18next";
+import i18n from "../../../../../core/internationalization/i18n";
 
 export const IterativeTitle: React.FC = () => {
   const { t } = useTranslation();
   const firstTitle = t("introduction.coding_with");
   const secondTitle = t("introduction.teaching_with");
   const [secondLine, setSecondLine] = useState(false);
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+
+  useEffect(() => {
+    setSecondLine(false);
+    forceUpdate();
+  }, [i18n.language, t]);
 
   return (
     <div className="phrase" data-invert={true}>
@@ -41,6 +48,9 @@ const PhraseCursor: React.FC<{
 
   useEffect(() => {
     let wordCounter = 0;
+    setCurrentPhrase("");
+    setAnimate(false);
+
     const generatePhrase = () => {
       if (wordCounter <= phrase.length) {
         setCurrentPhrase(phrase.substring(0, wordCounter));
@@ -64,7 +74,7 @@ const PhraseCursor: React.FC<{
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [i18n.language]);
 
   return (
     <div className="phrase" style={{ color: textColor }}>

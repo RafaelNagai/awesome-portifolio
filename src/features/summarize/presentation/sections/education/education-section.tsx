@@ -16,20 +16,28 @@ export const EducationSection: React.FC = () => {
 
       <div className="education-item">
         <div className="education-item__title">
-          <p>Analyses and Development System</p>
+          <p>{t("experience.education.option1.title")}</p>
         </div>
         <div className="education-item__info">
-          <p className="education-item__where">Brazil</p>
-          <p className="education-item__period">Jan 2012 - Jun 2014</p>
+          <p className="education-item__where">
+            {t("experience.education.option1.from")}
+          </p>
+          <p className="education-item__period">
+            {t("experience.education.option1.period")}
+          </p>
         </div>
       </div>
       <div className="education-item">
         <div className="education-item__title">
-          <p>Web Development</p>
+          <p>{t("experience.education.option2.title")}</p>
         </div>
         <div className="education-item__info">
-          <p className="education-item__where">Canada</p>
-          <p className="education-item__period">Jan 2025 - Dec 2026</p>
+          <p className="education-item__where">
+            {t("experience.education.option2.from")}
+          </p>
+          <p className="education-item__period">
+            {t("experience.education.option2.period")}
+          </p>
         </div>
       </div>
     </div>

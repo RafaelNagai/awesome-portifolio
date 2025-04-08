@@ -1,4 +1,8 @@
 {
+  "contact": {
+    "heading": "Software Engineer",
+    "contact": "Contact"
+  },
   "introduction": {
     "description": "I am a trusted mobile developer with 8+ years of experience in Flutter and cross-platform development. I started in IT support at WIT Solutions before transitioning to development, working with PhoneGap, JavaScript, and PHP. I contributed to a Xamarin startup and played a key role in Liberty Mutual’s Aliro project using C# MVC 5. In 2018, I specialized in Xamarin Forms, earning certifications and leading an ASP.NET migration. After studying English in Ireland (B2 PET Cambridge), I focused on Flutter, taking Tech Lead roles at Camino Education and ArcTouch, delivering high-quality Android and iOS applications.",
     "coding_with": "Coding with ",
@@ -57,10 +61,15 @@
     "education": {
       "title": "Education",
       "description": "I hold a degree in Analysis and Development of Systems and have furthered my education by studying web front-end development at Cornerstone. This has helped me strengthen my skills and broaden my expertise in the field of technology.",
-      "skills": {
-        "software": "Software Engineer",
-        "mobile": "Mobile Developer",
-        "web": "Web Developer"
+      "option1": {
+        "title": "Analyses and Development System",
+        "from": "Brazil",
+        "period": "Jan 2012 - Jun 2014"
+      },
+      "option2": {
+        "title": "Front-End Web Development",
+        "from": "Canada",
+        "period": "Jan 2025 - Dec 2026"
       }
     },
     "language": {

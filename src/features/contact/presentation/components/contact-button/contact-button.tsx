@@ -39,7 +39,7 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
         />
       ) : (
         <p className={`${isExpanded && "contact-button--hide"}`}>
-          {t("contact")}
+          {t("contact.contact")}
         </p>
       )}
 
