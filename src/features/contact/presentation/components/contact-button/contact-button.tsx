@@ -56,7 +56,11 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
           target="_blank"
           href={SocialMedia.linkedin}
         >
-          <img className="contact-button__icon" src={linkedinIcon} />
+          <img
+            className="contact-button__icon"
+            src={linkedinIcon}
+            alt="Rafael's LinkedIn"
+          />
           <p className="contact-button__title-icon">LinkedIn</p>
         </a>
         <a
@@ -64,7 +68,11 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
           target="_blank"
           href={SocialMedia.github}
         >
-          <img className="contact-button__icon" src={githubIcon} />
+          <img
+            className="contact-button__icon"
+            src={githubIcon}
+            alt="Rafael's GitHub"
+          />
           <p className="contact-button__title-icon">Github</p>
         </a>
         <a
@@ -72,7 +80,11 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
           target="_blank"
           href={SocialMedia.youtube}
         >
-          <img className="contact-button__icon" src={pubdevIcon} />
+          <img
+            className="contact-button__icon"
+            src={pubdevIcon}
+            alt="Pub Dev Youtube Channel"
+          />
           <p className="contact-button__title-icon">Youtube</p>
         </a>
       </FadeInOut>

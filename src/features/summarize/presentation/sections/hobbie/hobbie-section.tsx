@@ -12,7 +12,11 @@ export const HobbieSection: React.FC = () => {
   return (
     <div className="hobbie-section summarize-section">
       <div className="summarize-section__title summarize-section__title--right">
-        <img className="summarize-section__image summarize__icon" src={icon} />
+        <img
+          className="summarize-section__image summarize__icon"
+          src={icon}
+          alt=""
+        />
         <h2>{t("experience.hobbie.title")}</h2>
       </div>
       <p>{t("experience.hobbie.description")}</p>
@@ -24,14 +28,17 @@ export const HobbieSection: React.FC = () => {
         <img
           className="hobbie-section__hobbie hobbie-section__hobbie--3"
           src={skyrimImage}
+          alt="Skyrim"
         />
         <img
           className="hobbie-section__hobbie hobbie-section__hobbie--2"
           src={lolImage}
+          alt="League of Legends"
         />
         <img
           className="hobbie-section__hobbie hobbie-section__hobbie--1"
           src={valorantImage}
+          alt="Valorant"
         />
       </div>
     </div>

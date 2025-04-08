@@ -13,6 +13,7 @@ export const YoutubeSection: React.FC = () => {
         <img
           className="summarize-section__image summarize__icon"
           src={youtubeIcon}
+          alt=""
         />
         <h2>{t("experience.youtube.title")}</h2>
       </div>

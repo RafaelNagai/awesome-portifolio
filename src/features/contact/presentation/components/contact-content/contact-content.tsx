@@ -30,6 +30,7 @@ export const ContactContent: React.FC = () => {
                 className="contact-content__icon"
                 src={githubIcon}
                 data-hover={true}
+                alt="Github"
               />
             </a>
             <a
@@ -41,6 +42,7 @@ export const ContactContent: React.FC = () => {
                 className="contact-content__icon"
                 src={linkedinIcon}
                 data-hover={true}
+                alt="LinkedIn"
               />
             </a>
             <a
@@ -52,6 +54,7 @@ export const ContactContent: React.FC = () => {
                 className="contact-content__icon"
                 src={pubdevIcon}
                 data-hover={true}
+                alt="Pub Dev Youtube Channel"
               />
             </a>
           </div>

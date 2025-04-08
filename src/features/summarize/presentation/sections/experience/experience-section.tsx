@@ -12,6 +12,7 @@ export const ExperienceSection: React.FC = () => {
         <img
           className="summarize-section__image summarize__icon"
           src={experienceIcon}
+          alt=""
         />
         <h2>{t("experience.job.title")}</h2>
       </div>
