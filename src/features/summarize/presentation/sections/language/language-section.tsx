@@ -9,7 +9,7 @@ export const LanguageSection: React.FC = () => {
   return (
     <div className="language-section summarize-section">
       <div className="summarize-section__title summarize-section__title--right">
-        <img className="summarize-section__image" src={icon} />
+        <img className="summarize-section__image summarize__icon" src={icon} />
         <h2>{t("experience.language.title")}</h2>
       </div>
       <p>{t("experience.language.description")}</p>

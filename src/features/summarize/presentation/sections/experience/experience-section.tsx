@@ -9,7 +9,10 @@ export const ExperienceSection: React.FC = () => {
   return (
     <div className="experience-section summarize-section">
       <div className="summarize-section__title">
-        <img className="summarize-section__image" src={experienceIcon} />
+        <img
+          className="summarize-section__image summarize__icon"
+          src={experienceIcon}
+        />
         <h2>{t("experience.job.title")}</h2>
       </div>
       <p>{t("experience.job.description")}</p>

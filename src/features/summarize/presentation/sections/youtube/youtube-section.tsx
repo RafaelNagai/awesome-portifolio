@@ -9,7 +9,10 @@ export const YoutubeSection: React.FC = () => {
   return (
     <div className="youtube-section summarize-section">
       <div className="summarize-section__title summarize-section__title--right">
-        <img className="summarize-section__image" src={youtubeIcon} />
+        <img
+          className="summarize-section__image summarize__icon"
+          src={youtubeIcon}
+        />
         <h2>{t("experience.youtube.title")}</h2>
       </div>
 

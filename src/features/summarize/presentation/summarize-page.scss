@@ -22,6 +22,11 @@ $default-spacing: 2.5rem;
     1fr 1fr
   );
 
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+
   &__item {
     margin-top: $default-spacing;
     @include responsive-property(width, 90%, 90%, 90%, 70%, 70%);
