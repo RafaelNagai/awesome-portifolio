@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./experience-section.scss";
-import experienceIcon from "../../../../../assets/icons/experience-icon.png";
+import experienceIcon from "../../../../../assets/icons/experience-icon.webp";
 
 export const ExperienceSection: React.FC = () => {
   const { t } = useTranslation();

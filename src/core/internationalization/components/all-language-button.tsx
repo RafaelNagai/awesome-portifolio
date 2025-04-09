@@ -1,7 +1,7 @@
 import React from "react";
 import { LanguageButton } from "./language-button/language-button";
-import brazilFlag from "../../../assets/flags/brazil.jpg";
-import canadaFlag from "../../../assets/flags/canada.jpg";
+import brazilFlag from "../../../assets/flags/brazil.webp";
+import canadaFlag from "../../../assets/flags/canada.webp";
 import "./all-language-button.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";

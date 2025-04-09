@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./language-section.scss";
-import icon from "../../../../../assets/icons/language-icon.png";
+import icon from "../../../../../assets/icons/language-icon.webp";
 
 export const LanguageSection: React.FC = () => {
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./youtube-section.scss";
-import youtubeIcon from "../../../../../assets/icons/youtube-icon.png";
+import youtubeIcon from "../../../../../assets/icons/youtube-icon.webp";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 
 export const YoutubeSection: React.FC = () => {

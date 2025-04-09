@@ -1,6 +1,6 @@
-import pubdevIcon from "../../../../../assets/logos/pubdev-logo.png";
-import githubIcon from "../../../../../assets/icons/github-icon.png";
-import linkedinIcon from "../../../../../assets/icons/linkedin-icon.png";
+import pubdevIcon from "../../../../../assets/logos/pubdev-logo.webp";
+import githubIcon from "../../../../../assets/icons/github-icon.webp";
+import linkedinIcon from "../../../../../assets/icons/linkedin-icon.webp";
 
 import "./contact-content.scss";
 import { SocialMedia } from "../../../domain/social-media";

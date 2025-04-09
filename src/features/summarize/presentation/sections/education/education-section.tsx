@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./education-section.scss";
-import educationIcon from "../../../../../assets/icons/education-icon.png";
+import educationIcon from "../../../../../assets/icons/education-icon.webp";
 
 export const EducationSection: React.FC = () => {
   const { t } = useTranslation();

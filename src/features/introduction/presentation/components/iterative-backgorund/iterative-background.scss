@@ -25,11 +25,11 @@
   @include image-position();
   @include responsive-property(
     background-image,
-    url("/rafael-background_x1.png"),
-    url("/rafael-background_x1.png"),
-    url("/rafael-background_x1.png"),
-    url("/rafael-background_x1.png"),
-    url("/rafael-background_x1.png")
+    url("/rafael-background_x1.webp"),
+    url("/rafael-background_x1.webp"),
+    url("/rafael-background_x1.webp"),
+    url("/rafael-background_x1.webp"),
+    url("/rafael-background_x1.webp")
   );
 
   &::before {
@@ -61,22 +61,22 @@ $size-circle: 30vw;
     @include image-position();
     @include responsive-property(
       background-image,
-      url("/rafael-background_x1.png"),
-      url("/rafael-background_x1.png"),
-      url("/rafael-background_x1.png"),
-      url("/rafael-background_x1.png"),
-      url("/rafael-background_x1.png")
+      url("/rafael-background_x1.webp"),
+      url("/rafael-background_x1.webp"),
+      url("/rafael-background_x1.webp"),
+      url("/rafael-background_x1.webp"),
+      url("/rafael-background_x1.webp")
     );
 
     &:first-of-type {
       z-index: 10;
       @include responsive-property(
         background-image,
-        url("/rafael-background_x1.png"),
-        url("/rafael-background_x1.png"),
-        url("/rafael-background_x2.png"),
-        url("/rafael-background_x3.png"),
-        url("/rafael-background_x4.png")
+        url("/rafael-background_x1.webp"),
+        url("/rafael-background_x1.webp"),
+        url("/rafael-background_x2.webp"),
+        url("/rafael-background_x3.webp"),
+        url("/rafael-background_x4.webp")
       );
     }
   }

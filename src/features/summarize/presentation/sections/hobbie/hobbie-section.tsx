@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./hobbie-section.scss";
-import icon from "../../../../../assets/icons/hobbie-icon.png";
-import skyrimImage from "../../../../../assets/hobbies/skyrim-icon.jpg";
-import lolImage from "../../../../../assets/hobbies/lol-icon.jpg";
-import valorantImage from "../../../../../assets/hobbies/valorant-icon.jpg";
+import icon from "../../../../../assets/icons/hobbie-icon.webp";
+import skyrimImage from "../../../../../assets/hobbies/skyrim-icon.webp";
+import lolImage from "../../../../../assets/hobbies/lol-icon.webp";
+import valorantImage from "../../../../../assets/hobbies/valorant-icon.webp";
 
 export const HobbieSection: React.FC = () => {
   const { t } = useTranslation();
