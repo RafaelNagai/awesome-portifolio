@@ -11,6 +11,12 @@ This repository contains the source code of my personal portfolio website, built
 - **BEM Methodology** – Block Element Modifier structure for clear and scalable class naming.
 - **Clean Code & Clean Architecture** – Focused on maintainability, reusability, and separation of concerns.
 
+## 📊 Lighthouse Report
+
+Here’s the Lighthouse performance audit from my portfolio website:
+
+![Lighthouse Report](./assets/lighthouse-report.png)
+
 ## 📁 Project Structure
 
 The project is organized following clean architecture principles and modular components:
