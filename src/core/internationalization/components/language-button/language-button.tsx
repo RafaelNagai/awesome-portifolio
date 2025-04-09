@@ -29,7 +29,7 @@ export const LanguageButton: React.FC<LanguageButtonProps> = ({
       style={{
         backgroundImage: `url(${src})`,
       }}
-      aria-labelledby={`language - ${language}`}
+      aria-label={`language - ${language}`}
     ></button>
   );
 };
