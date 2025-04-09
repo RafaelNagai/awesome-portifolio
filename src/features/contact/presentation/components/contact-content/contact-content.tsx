@@ -16,10 +16,10 @@ export const ContactContent: React.FC = () => {
     <div className="contact-content">
       <FadeInOut direction={directionFade.down}>
         <div className="contact-content__container">
-          <h2 className="contact-content__title">Rafael Kenji Sales Nagai</h2>
-          <h4 className="contact-content__subtitle">
+          <h1 className="contact-content__title">Rafael Kenji Sales Nagai</h1>
+          <h2 className="contact-content__subtitle">
             • {t("contact.heading")} •
-          </h4>
+          </h2>
           <div className="contact-content__social-medias">
             <a
               className="contact-content__icon"

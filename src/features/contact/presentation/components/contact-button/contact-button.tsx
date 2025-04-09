@@ -31,7 +31,8 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
       }`}
       onClick={onTap}
       data-hover={isExpanded ? false : true}
-      aria-labelledby="Contact - Button"
+      aria-label="Contact"
+      aria-roledescription="Button"
     >
       {isOpened ? (
         <FontAwesomeIcon
