@@ -25,14 +25,13 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
   };
 
   return (
-    <div
+    <button
       className={`contact-button button ${
         isExpanded ? "contact-button--expanded" : "contact-button--contracted"
       }`}
       onClick={onTap}
       data-hover={isExpanded ? false : true}
       aria-label="Contact"
-      aria-roledescription="Button"
     >
       {isOpened ? (
         <FontAwesomeIcon
@@ -90,6 +89,6 @@ export const ContactButton: React.FC<ContactButtonProps> = ({ isExpanded }) => {
           <p className="contact-button__title-icon">Youtube</p>
         </a>
       </FadeInOut>
-    </div>
+    </button>
   );
 };
